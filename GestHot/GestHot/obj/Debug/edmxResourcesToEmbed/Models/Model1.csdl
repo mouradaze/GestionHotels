@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GestHotModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Hotel">
+    <Key>
+      <PropertyRef Name="idH" />
+    </Key>
+    <Property Name="idH" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="adresse" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="nbCH" Type="Int32" />
+    <Property Name="note" Type="Decimal" Precision="18" Scale="0" />
+    <NavigationProperty Name="Reservations" Relationship="Self.fk_idH" FromRole="Hotels" ToRole="Reservation" />
+  </EntityType>
+  <EntityType Name="Reservation">
+    <Key>
+      <PropertyRef Name="idR" />
+    </Key>
+    <Property Name="idR" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idU" Type="Int32" Nullable="false" />
+    <Property Name="idH" Type="Int32" Nullable="false" />
+    <Property Name="startR" Type="DateTime" Precision="0" />
+    <Property Name="endR" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Hotel" Relationship="Self.fk_idH" FromRole="Reservation" ToRole="Hotels" />
+    <NavigationProperty Name="User" Relationship="Self.fk_idU" FromRole="Reservation" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="idU" />
+    </Key>
+    <Property Name="idU" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="LastName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Role" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Reservations" Relationship="Self.fk_idU" FromRole="Users" ToRole="Reservation" />
+  </EntityType>
+  <Association Name="fk_idH">
+    <End Role="Hotels" Type="Self.Hotel" Multiplicity="1" />
+    <End Role="Reservation" Type="Self.Reservation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hotels">
+        <PropertyRef Name="idH" />
+      </Principal>
+      <Dependent Role="Reservation">
+        <PropertyRef Name="idH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_idU">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
+    <End Role="Reservation" Type="Self.Reservation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="idU" />
+      </Principal>
+      <Dependent Role="Reservation">
+        <PropertyRef Name="idU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="GestHotEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Hotels" EntityType="Self.Hotel" />
+    <EntitySet Name="Reservations" EntityType="Self.Reservation" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <AssociationSet Name="fk_idH" Association="Self.fk_idH">
+      <End Role="Hotels" EntitySet="Hotels" />
+      <End Role="Reservation" EntitySet="Reservations" />
+    </AssociationSet>
+    <AssociationSet Name="fk_idU" Association="Self.fk_idU">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Reservation" EntitySet="Reservations" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

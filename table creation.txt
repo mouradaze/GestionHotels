@@ -1,0 +1,27 @@
+create table Users (
+	idU int NOT NULL IDENTITY(1,1) PRIMARY KEY,
+	Name varchar,
+	LastName varchar,
+	Email varchar Not null,
+	Password varchar Not null,
+	Role int Not null
+);
+
+create table Hotels(
+	idH int NOT NULL IDENTITY(1,1) PRIMARY KEY,
+	name varchar,
+	adresse varchar,
+	description varchar,
+	nbCH int,
+	note decimal
+);
+
+create table Reservation(
+	idR int NOT NULL IDENTITY(1,1) PRIMARY KEY,
+	idU int NOT NULL,
+	idH int NOT NULL,
+	startR date,
+	endR date,
+	CONSTRAINT fk_idU foreign key (idU) references Users(idU),
+	CONSTRAINT fk_idH foreign key (idH) references Hotels(idH)
+);

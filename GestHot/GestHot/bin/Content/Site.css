@@ -1,0 +1,34 @@
+﻿/*
+    light blue #e9f1fa
+    bright blue #00abe4
+    white ffffff
+*/
+.color-primary {
+    color: #e9f1fa;
+}
+.color-secondary {
+    background-color : green;
+}
+.no-color{
+    text-decoration:none;
+    color:black;
+}
+.searchh{
+    background-image:url("../images/search.jpg");
+    height:35vh;
+}
+.first {
+    background-image: url("../images/search.jpg");
+    height: 25vh;
+}
+.plan {
+    background-color: #E4CCE1;
+}
+.nopadding {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+.newback{
+    background-color:lightgray;
+}
+

@@ -1,0 +1,19 @@
+USER
+idU,name,email,password,role,listFavorites
+
+HOTEL
+idH,name,adresse,description,image,nbCH,listReviews,note
+
+REVIEW
+id,msg,idU,idH
+
+FAVORITS
+idU,idH
+
+RESERVATION
+idU,dateStart,dateEnd,idH
+
+
+insert into Hotels(name,adresse,description,nbCH,note) values('riad test','hay karima, dale','hmada mous de la mous de mous',50,3);
+  insert into Hotels(name,adresse,description,nbCH,note) values('Hotel hmed','hay karima, dale','hmada mous de la mous de mous',10,5);
+  insert into Hotels(name,adresse,description,nbCH,note) values('Hotel farah','hay karima, dale','hmada mous de la mous de mous',150,1);
