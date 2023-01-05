@@ -1,6 +1,8 @@
-﻿@{
+﻿@model IEnumerable<GestHot.Models.Hotel>
+@{
     ViewBag.Title = "Home Page";
 }
+@{var res = Model.First();}
 <div class="container">
     <div class="searchh d-flex align-items-center justify-content-center my-4">
         <div class="col-5 ">
@@ -41,28 +43,24 @@
             <div class="carousel-item active">
                 <img src="~/images/c.png" class="d-block w-100" alt="1">
                 <div class="carousel-caption d-none d-md-block">
-                    <h5>First Hotel</h5>
-                    <p>Some Description or the adresse of the hotel</p>
+                    <h5>@res.name</h5>
+
+                    <p>@res.description</p>
                     <a class="btn btn-primary">Reserver</a>
                 </div>
             </div>
-            <div class="carousel-item">
-                <img src="~/images/c.png" class="d-block w-100" alt="2">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>First Hotel</h5>
-                    <p>Some Description or the adresse of the hotel</p>
-                    <a class="btn btn-primary">Reserver</a>
+            @foreach (var item in Model)
+            {
+                <div class="carousel-item">
+                    <img src="~/images/c.png" class="d-block w-100" alt="2">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>@Html.DisplayFor(modelItem => item.name)</h5>
+                        <p>@Html.DisplayFor(modelItem => item.description)</p>
+                        <a class="btn btn-primary">Reserver</a>
+                    </div>
                 </div>
+            }
             </div>
-            <div class="carousel-item">
-                <img src="~/images/c.png" class="d-block w-100" alt="3">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>First Hotel</h5>
-                    <p>Some Description or the adresse of the hotel</p>
-                    <a class="btn btn-primary">Reserver</a>
-                </div>
-            </div>
-        </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Previous</span>
@@ -74,9 +72,10 @@
     </div>
 
     <div class="row ">
-        <div class="col-8 nopadding plan">
+        <div class="col-8 nopadding plan text-center">
+
             <h3 class="my-4 mx-1">Plan your next trip</h3>
-            <a class="btn btn-secondary mx-1">See the list</a>
+            @Html.ActionLink("See the list", "Index", "Hotel", null, new { @class = "btn btn-secondary mx-1" })
         </div>
         <div class="col-4 nopadding">
             <img src="~/images/search.jpg" height="150" />
@@ -94,39 +93,19 @@
 
     </div>
     <div class="row">
-        <div class="col-sm-4">
-            <div class="card" style="width: 18rem;">
-                <img src="#" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Hotel Name</h5>
-                    <p class="card-text">Adresse</p>
-                    <p>Note</p>
-                    <a href="#" class="btn btn-primary">Reserve</a>
+        @foreach (var item in Model)
+        {
+            <div class="col-sm-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="#" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">@Html.DisplayFor(modelItem => item.name)</h5>
+                        <p class="card-text">@Html.DisplayFor(modelItem => item.adresse)</p>
+                        <p>Note</p>
+                        <a href="#" class="btn btn-primary">Reserve</a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card" style="width: 18rem;">
-                <img src="#" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Hotel Name</h5>
-                    <p class="card-text">Adresse</p>
-                    <p>Note</p>
-                    <a href="#" class="btn btn-primary">Reserve</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <div class="card" style="width: 18rem;">
-                <img src="#" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Hotel Name</h5>
-                    <p class="card-text">Adresse</p>
-                    <p>Note</p>
-                    <a href="#" class="btn btn-primary">Reserve</a>
-                </div>
-            </div>
-        </div>
-
+        }
     </div>
 </div>

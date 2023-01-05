@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GestHot.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,9 +9,11 @@ namespace GestHot.Controllers
 {
     public class HomeController : Controller
     {
+        private GestHotEntities1 db = new GestHotEntities1();
         public ActionResult Index()
         {
-            return View();
+            
+            return View(db.Hotels.ToList());
         }
 
         public ActionResult AllHotels()

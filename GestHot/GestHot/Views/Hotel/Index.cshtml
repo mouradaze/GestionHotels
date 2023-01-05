@@ -4,7 +4,27 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<div class="container">
+    @foreach (var item in Model)
+    {
+        <div class="row my-5">
+            <div class="col-4">
+                <img src="~/images/search.jpg" height="250" />
+            </div>
+            <div class="col-6 mx-4">
+                <h2 class="my-2">@Html.DisplayFor(modelItem => item.name)</h2>
+                <h4>@Html.DisplayFor(modelItem => item.adresse)</h4>
+                <p>@Html.DisplayFor(modelItem => item.description)</p>
+                @Html.ActionLink("Details", "Details", new { id = item.idH })
+                <a class="btn btn-danger">Reserver</a>
+            </div>
+        </div>
+        <hr />
+    }
+</div>
+
+
+<!--<h2>Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -54,4 +74,4 @@
     </tr>
 }
 
-</table>
+</table>-->
