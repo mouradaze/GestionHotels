@@ -2,23 +2,40 @@
     light blue #e9f1fa
     bright blue #00abe4
     white ffffff
+    main #d12013
 */
 .color-primary {
-    color: #e9f1fa;
+   background-color: #d12013;
+}
+.btn-red {
+    background-color: #d12013;
+    color:white;
+    transition: color ease-in-out 0.3s, background-color ease-in-out 0.3s;
+}
+.btn-red:hover {
+        color: aliceblue;
+        background-color: #e33c30;
+}
+.text-red {
+    color: #d12013;
 }
 .color-secondary {
     background-color : green;
 }
-.no-color{
-    text-decoration:none;
-    color:black;
+.no-color {
+    text-decoration: none !important;
+    color: black;
+    transition: color ease-in-out 0.3s;
 }
+    .no-color:hover {
+        color: #d12013;
+    }
 .searchh{
     background-image:url("../images/search.jpg");
     height:35vh;
 }
 .first {
-    background-image: url("../images/search.jpg");
+    background-image: url("../images/vacabetter.jpeg");
     height: 25vh;
 }
 .plan {
@@ -31,4 +48,6 @@
 .newback{
     background-color:lightgray;
 }
+
+
 

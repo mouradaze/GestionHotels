@@ -17,6 +17,7 @@ namespace GestHot.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Hotel()
         {
+            this.Comments = new HashSet<Comment>();
             this.Reservations = new HashSet<Reservation>();
         }
     
@@ -27,6 +28,8 @@ namespace GestHot.Models
         public Nullable<int> nbCH { get; set; }
         public Nullable<decimal> note { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Comment> Comments { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Reservation> Reservations { get; set; }
     }

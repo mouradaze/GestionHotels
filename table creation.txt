@@ -25,3 +25,11 @@ create table Reservation(
 	CONSTRAINT fk_idU foreign key (idU) references Users(idU),
 	CONSTRAINT fk_idH foreign key (idH) references Hotels(idH)
 );
+create table Comments(
+	idC int NOT NULL IDENTITY(1,1) PRIMARY KEY,
+	message varchar(500) NOT NULL,
+	idU int NOT NULL,
+	idH int NOT NULL,
+	CONSTRAINT fk_idU_rev foreign key (idU) references Users(idU),
+	CONSTRAINT fk_idH_rev foreign key (idH) references Hotels(idH),
+);

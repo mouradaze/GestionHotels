@@ -25,6 +25,7 @@ namespace GestHot.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Comment> Comments { get; set; }
         public virtual DbSet<Hotel> Hotels { get; set; }
         public virtual DbSet<Reservation> Reservations { get; set; }
         public virtual DbSet<User> Users { get; set; }

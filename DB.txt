@@ -17,3 +17,6 @@ idU,dateStart,dateEnd,idH
 insert into Hotels(name,adresse,description,nbCH,note) values('riad test','hay karima, dale','hmada mous de la mous de mous',50,3);
   insert into Hotels(name,adresse,description,nbCH,note) values('Hotel hmed','hay karima, dale','hmada mous de la mous de mous',10,5);
   insert into Hotels(name,adresse,description,nbCH,note) values('Hotel farah','hay karima, dale','hmada mous de la mous de mous',150,1);
+
+/*insert into Comments(message,idU,idH) values('Best Hotel Ever',1,1)*/
+  /*insert into Users(Name,LastName,Email,Password,Role) values('mourad','aze','mo@m.com','test1',0);*/

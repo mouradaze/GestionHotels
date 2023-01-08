@@ -1,38 +1,48 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="GestHotModelStoreContainer" CdmEntityContainer="GestHotEntities1">
+    <EntitySetMapping Name="Comments">
+      <EntityTypeMapping TypeName="GestHotModel.Comment">
+        <MappingFragment StoreEntitySet="Comments">
+          <ScalarProperty Name="idH" ColumnName="idH" />
+          <ScalarProperty Name="idU" ColumnName="idU" />
+          <ScalarProperty Name="message" ColumnName="message" />
+          <ScalarProperty Name="idC" ColumnName="idC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Hotels">
       <EntityTypeMapping TypeName="GestHotModel.Hotel">
         <MappingFragment StoreEntitySet="Hotels">
-          <ScalarProperty Name="idH" ColumnName="idH" />
-          <ScalarProperty Name="name" ColumnName="name" />
-          <ScalarProperty Name="adresse" ColumnName="adresse" />
-          <ScalarProperty Name="description" ColumnName="description" />
-          <ScalarProperty Name="nbCH" ColumnName="nbCH" />
           <ScalarProperty Name="note" ColumnName="note" />
+          <ScalarProperty Name="nbCH" ColumnName="nbCH" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="adresse" ColumnName="adresse" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="idH" ColumnName="idH" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Reservations">
       <EntityTypeMapping TypeName="GestHotModel.Reservation">
         <MappingFragment StoreEntitySet="Reservation">
-          <ScalarProperty Name="idR" ColumnName="idR" />
-          <ScalarProperty Name="idU" ColumnName="idU" />
-          <ScalarProperty Name="idH" ColumnName="idH" />
-          <ScalarProperty Name="startR" ColumnName="startR" />
           <ScalarProperty Name="endR" ColumnName="endR" />
+          <ScalarProperty Name="startR" ColumnName="startR" />
+          <ScalarProperty Name="idH" ColumnName="idH" />
+          <ScalarProperty Name="idU" ColumnName="idU" />
+          <ScalarProperty Name="idR" ColumnName="idR" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Users">
       <EntityTypeMapping TypeName="GestHotModel.User">
         <MappingFragment StoreEntitySet="Users">
-          <ScalarProperty Name="idU" ColumnName="idU" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="LastName" ColumnName="LastName" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="idU" ColumnName="idU" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

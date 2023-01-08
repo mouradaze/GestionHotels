@@ -10,111 +10,112 @@ using GestHot.Models;
 
 namespace GestHot.Controllers
 {
-    public class HotelController : Controller
+    public class UserController : Controller
     {
         private GestHotEntities1 db = new GestHotEntities1();
 
-        // GET: Hotel
+        public ActionResult owner()
+        {
+            return View();
+        }
+        // GET: User
         public ActionResult Index()
         {
-            return View(db.Hotels.ToList());
+            return View(db.Users.ToList());
         }
 
-        // GET: Hotel/Details/5
+        // GET: User/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Hotel hotel = db.Hotels.Find(id);
-            if (hotel == null)
+            User user = db.Users.Find(id);
+            if (user == null)
             {
                 return HttpNotFound();
             }
-            var cmts = db.Comments.Where(x => x.idH == id);
-            //List<Comment> cm = (List<Comment>)cmts;
-            //if(cmts.Count != 0)
-            TempData["comments"] = cmts;
-            return View(hotel);
+            return View(user);
         }
 
-        // GET: Hotel/Create
+        // GET: User/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Hotel/Create
+        // POST: User/Create
         // Afin de déjouer les attaques par survalidation, activez les propriétés spécifiques auxquelles vous voulez établir une liaison. Pour 
         // plus de détails, consultez https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "idH,name,adresse,description,nbCH,note")] Hotel hotel)
+        public ActionResult owner([Bind(Include = "Name,LastName,Email,Password")] User user)
         {
             if (ModelState.IsValid)
             {
-                db.Hotels.Add(hotel);
+                user.Role = 0;
+                db.Users.Add(user);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(hotel);
+            return View(user);
         }
 
-        // GET: Hotel/Edit/5
+        // GET: User/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Hotel hotel = db.Hotels.Find(id);
-            if (hotel == null)
+            User user = db.Users.Find(id);
+            if (user == null)
             {
                 return HttpNotFound();
             }
-            return View(hotel);
+            return View(user);
         }
 
-        // POST: Hotel/Edit/5
+        // POST: User/Edit/5
         // Afin de déjouer les attaques par survalidation, activez les propriétés spécifiques auxquelles vous voulez établir une liaison. Pour 
         // plus de détails, consultez https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "idH,name,adresse,description,nbCH,note")] Hotel hotel)
+        public ActionResult Edit([Bind(Include = "idU,Name,LastName,Email,Password,Role")] User user)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(hotel).State = EntityState.Modified;
+                db.Entry(user).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(hotel);
+            return View(user);
         }
 
-        // GET: Hotel/Delete/5
+        // GET: User/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Hotel hotel = db.Hotels.Find(id);
-            if (hotel == null)
+            User user = db.Users.Find(id);
+            if (user == null)
             {
                 return HttpNotFound();
             }
-            return View(hotel);
+            return View(user);
         }
 
-        // POST: Hotel/Delete/5
+        // POST: User/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Hotel hotel = db.Hotels.Find(id);
-            db.Hotels.Remove(hotel);
+            User user = db.Users.Find(id);
+            db.Users.Remove(user);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -13,8 +13,8 @@
             <h5><i class="bi bi-geo-alt-fill"></i> @Html.DisplayFor(model => model.adresse)</h5>
         </div>
         <div class="col-3 d-flex align-items-end">
-            <p class="mx-2"><i class="bi bi-pencil-fill"></i> Share</p>
-            <p><i class="bi bi-heart-fill"></i> Love</p>
+            <a class="mx-2 my-2 no-color" href="#review"><i class="bi bi-pencil-fill"></i> Write a review</a>
+            <a class="mx-2 my-2 no-color" href="#"><i class="bi bi-heart-fill"></i> Love</a>
         </div>
     </div>
 </div>
@@ -24,7 +24,7 @@
             <div class="col-6 my-3">
                 <div class="card bg-white">
                     <div class="card-header">
-                        <h3>Reserve now</h3>
+                        <h3 class="text-red text-uppercase">Reserve now</h3>
                     </div>
                     <div class="card-body">
                         <div class="row my-3">
@@ -44,7 +44,7 @@
                             </div>
                         </div>
                         <div class="text-center">
-                            <a class="btn btn-success ">Reserve now</a>
+                            <a class="btn btn-red ">Reserve now</a>
                         </div>
 
                     </div>
@@ -58,87 +58,56 @@
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="card">
-                <div class="card-header">
-                    <h2>Description</h2>
-                </div>
-                <div class="card-body">
-                    <p>@Html.DisplayFor(model => model.description)</p>
-                    <p>Nomber of rooms : @Html.DisplayFor(model => model.nbCH)</p>
-                </div>
-            </div>
-        </div>
+        
     </div>
 
 
 
 </div>
 
-<div class="container newback my-5">
+<div class="container  my-5">
     <div class="row ">
-        <h3 class="my-4">You may also like</h3>
+        <h3 class="my-4 text-uppercase">You may also like</h3>
         <hr />
     </div>
     <div class="row">
         <div class="col-sm-2 my-3">
             <div class="card">
-                <img src="~/images/search.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Hotel name</h5>
-                    <p class="card-text">Stars</p>
-                    <a href="#" class="btn btn-primary">Price</a>
-                </div>
+                <a href="#" class="no-color">
+                    <img src="~/images/search.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Hotel name</h5>
+                        <p class="card-text">Stars</p>
+                        <p class="text-uppercase">Price</p>
+                    </div>
+                </a>
+
             </div>
         </div>
         <div class="col-sm-2 my-3">
             <div class="card">
-                <img src="~/images/search.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Hotel name</h5>
-                    <p class="card-text">Stars</p>
-                    <a href="#" class="btn btn-primary">Price</a>
-                </div>
+                <a href="#" class="no-color">
+                    <img src="~/images/search.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Hotel name</h5>
+                        <p class="card-text">Stars</p>
+                        <p class="text-uppercase">Price</p>
+                    </div>
+                </a>
+
             </div>
         </div>
         <div class="col-sm-2 my-3">
             <div class="card">
-                <img src="~/images/search.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Hotel name</h5>
-                    <p class="card-text">Stars</p>
-                    <a href="#" class="btn btn-primary">Price</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-2 my-3">
-            <div class="card">
-                <img src="~/images/search.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Hotel name</h5>
-                    <p class="card-text">Stars</p>
-                    <a href="#" class="btn btn-primary">Price</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-2 my-3">
-            <div class="card">
-                <img src="~/images/search.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Hotel name</h5>
-                    <p class="card-text">Stars</p>
-                    <a href="#" class="btn btn-primary">Price</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-2 my-3">
-            <div class="card">
-                <img src="~/images/search.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Hotel name</h5>
-                    <p class="card-text">Stars</p>
-                    <a href="#" class="btn btn-primary">Price</a>
-                </div>
+                <a href="#" class="no-color">
+                    <img src="~/images/search.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Hotel name</h5>
+                        <p class="card-text">Stars</p>
+                        <p class="text-uppercase">Price</p>
+                    </div>
+                </a>
+
             </div>
         </div>
     </div>
@@ -149,11 +118,11 @@
         <div class="col-sm-6">
             <div class="card">
                 <div class="card-header">
-                    <h3>About</h3>
+                    <h3 class="text-uppercase text-red">About</h3>
                 </div>
                 <div class="card-body">
                     <h3>Stars</h3>
-                    <p>Description</p>
+                    <p>@Html.DisplayFor(model => model.description)</p>
                 </div>
             </div>
         </div>
@@ -161,39 +130,31 @@
 </div>
 
 <div class="container my-5">
-    <div class="row">
-        <h2>Reviews</h2>
+    <div class="row" id="review">
+        <h2 class="text-uppercase">Reviews</h2>
         <hr />
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-10">
-                <h5>Owner</h5>
-                <p>Comment</p>
-            </div>
+    <div class="row">
+        <div class="form-group">
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" placeholder="Your review"></textarea>
         </div>
-        <hr />
-        <div class="row">
-            <div class="col-10">
-                <h5>Owner</h5>
-                <p>Comment</p>
-            </div>
+        <div class="d-flex justify-content-end my-2">
+            <a class="btn btn-success btn-sm ">Add</a>
         </div>
-        <hr />
-        <div class="row">
-            <div class="col-10">
-                <h5>Owner</h5>
-                <p>Comment</p>
-            </div>
-        </div>
-        <hr />
-        <div class="row">
-            <div class="col-10">
-                <h5>Owner</h5>
-                <p>Comment</p>
-            </div>
-        </div>
-
+        
+    </div>
+    
+    <div class="container my-4">
+        @foreach(var cmt in TempData["comments"] as System.Data.Entity.Infrastructure.DbQuery<GestHot.Models.Comment>)
+            {
+                <div class="row">
+                    <div class="col-10">
+                        <h5>@Html.DisplayFor(modelcmt => cmt.idC)</h5>
+                        <p>@Html.DisplayFor(modelcmt => cmt.message)</p>
+                    </div>
+                </div>
+                <hr />
+            }
     </div>
 </div>
 

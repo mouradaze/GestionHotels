@@ -1,5 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="GestHotModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Comments">
+    <Key>
+      <PropertyRef Name="idC" />
+    </Key>
+    <Property Name="idC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="message" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="idU" Type="int" Nullable="false" />
+    <Property Name="idH" Type="int" Nullable="false" />
+  </EntityType>
   <EntityType Name="Hotels">
     <Key>
       <PropertyRef Name="idH" />
@@ -44,6 +53,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="fk_idH_rev">
+    <End Role="Hotels" Type="Self.Hotels" Multiplicity="1" />
+    <End Role="Comments" Type="Self.Comments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hotels">
+        <PropertyRef Name="idH" />
+      </Principal>
+      <Dependent Role="Comments">
+        <PropertyRef Name="idH" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="fk_idU">
     <End Role="Users" Type="Self.Users" Multiplicity="1" />
     <End Role="Reservation" Type="Self.Reservation" Multiplicity="*" />
@@ -56,7 +77,20 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="fk_idU_rev">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Comments" Type="Self.Comments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="idU" />
+      </Principal>
+      <Dependent Role="Comments">
+        <PropertyRef Name="idU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="GestHotModelStoreContainer">
+    <EntitySet Name="Comments" EntityType="Self.Comments" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Hotels" EntityType="Self.Hotels" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Reservation" EntityType="Self.Reservation" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
@@ -64,9 +98,17 @@
       <End Role="Hotels" EntitySet="Hotels" />
       <End Role="Reservation" EntitySet="Reservation" />
     </AssociationSet>
+    <AssociationSet Name="fk_idH_rev" Association="Self.fk_idH_rev">
+      <End Role="Hotels" EntitySet="Hotels" />
+      <End Role="Comments" EntitySet="Comments" />
+    </AssociationSet>
     <AssociationSet Name="fk_idU" Association="Self.fk_idU">
       <End Role="Users" EntitySet="Users" />
       <End Role="Reservation" EntitySet="Reservation" />
+    </AssociationSet>
+    <AssociationSet Name="fk_idU_rev" Association="Self.fk_idU_rev">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Comments" EntitySet="Comments" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

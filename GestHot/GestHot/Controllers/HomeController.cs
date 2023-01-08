@@ -26,10 +26,7 @@ namespace GestHot.Controllers
             return View();
         }
 
-        public ActionResult owner()
-        {
-            return View();
-        }
+    
 
         public ActionResult About()
         {
