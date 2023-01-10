@@ -1,7 +1,71 @@
 ﻿@{
     ViewBag.Title = "About";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+<div class="container">
+    <div class="row">
+        <div class="splide">
+            <div class="splide__track">
+                <div class="splide__list">
+                    <div class="col-sm-4 splide__slide m-2">
+                        <div class="card bg-dark text-white">
+                            <div class="card-body">
+                                <h5 class="card-title">Crad Slider 1 </h5>
+                                <p class="card-text">
+                                    With supporting text below as a natural lead-in to
+                                    additional content.
+                                </p>
+                                <a href="#" class="btn btn-primary">Read more</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 splide__slide m-2">
+                        <div class="card bg-dark text-white">
+                            <div class="card-body">
+                                <h5 class="card-title">Crad Slider 2</h5>
+                                <p class="card-text">
+                                    With supporting text below as a natural lead-in to
+                                    additional content.
+                                </p>
+                                <a href="#" class="btn btn-primary">Read more</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 splide__slide m-2">
+                        <div class="card bg-dark text-white">
+                            <div class="card-body">
+                                <h5 class="card-title">Crad Slider 3</h5>
+                                <p class="card-text">
+                                    With supporting text below as a natural lead-in to
+                                    additional content.
+                                </p>
+                                <a href="#" class="btn btn-primary">Read more</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 splide__slide m-2">
+                        <div class="card bg-dark text-white">
+                            <div class="card-body">
+                                <h5 class="card-title">Crad Slider 4</h5>
+                                <p class="card-text">
+                                    With supporting text below as a natural lead-in to
+                                    additional content.
+                                </p>
+                                <a href="#" class="btn btn-primary">Read more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-<p>Use this area to provide additional information.</p>
+<script>
+            var splide = new Splide('.splide', {
+                type: 'loop',
+                perPage: 3,
+                rewind: true,
+            });
+
+            splide.mount();
+</script>

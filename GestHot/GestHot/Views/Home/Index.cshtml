@@ -41,22 +41,13 @@
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <img src="~/images/c.png" class="d-block w-100" alt="1">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5 class="text-black text-uppercase">@res.name</h5>
-
-                    <p class="text-black">@res.description</p>
-                    <a class="btn btn-red">Reserver</a>
-                </div>
+                
             </div>
             @foreach (var item in Model)
             {
                 <div class="carousel-item">
                     <img src="~/images/c.png" class="d-block w-100" alt="2">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5 class="text-black text-uppercase">@Html.DisplayFor(modelItem => item.name)</h5>
-                        <p class="text-black">@Html.DisplayFor(modelItem => item.description)</p>
-                        <a class="btn btn-red">Reserver</a>
-                    </div>
+                    
                 </div>
             }
             </div>

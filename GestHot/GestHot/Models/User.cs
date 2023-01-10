@@ -20,7 +20,18 @@ namespace GestHot.Models
             this.Comments = new HashSet<Comment>();
             this.Reservations = new HashSet<Reservation>();
         }
-    
+        public User(string name, string lastName, string email, string password, int role)
+        {
+            
+            Name = name;
+            LastName = lastName;
+            Email = email;
+            Password = password;
+            Role = role;
+            this.Comments = new HashSet<Comment>();
+            this.Reservations = new HashSet<Reservation>();
+        }
+
         public int idU { get; set; }
         public string Name { get; set; }
         public string LastName { get; set; }

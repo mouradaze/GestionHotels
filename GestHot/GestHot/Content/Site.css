@@ -22,6 +22,9 @@
 .color-secondary {
     background-color : green;
 }
+.no-marker {
+    list-style-type: none;
+}
 .no-color {
     text-decoration: none !important;
     color: black;
@@ -30,13 +33,17 @@
     .no-color:hover {
         color: #d12013;
     }
-.searchh{
-    background-image:url("../images/search.jpg");
-    height:35vh;
+.searchh {
+    background-image: url("../images/search.jpg");
+    background-repeat: no-repeat;
+    height: 35vh;
+    background-size: 100% 100%;
 }
 .first {
     background-image: url("../images/vacabetter.jpeg");
+    background-repeat: no-repeat;
     height: 25vh;
+    background-size: 100% 100%;
 }
 .plan {
     background-color: #E4CCE1;

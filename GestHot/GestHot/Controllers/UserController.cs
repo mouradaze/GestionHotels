@@ -14,6 +14,9 @@ namespace GestHot.Controllers
     {
         private GestHotEntities1 db = new GestHotEntities1();
 
+
+        
+
         public ActionResult owner()
         {
             return View();
@@ -44,6 +47,32 @@ namespace GestHot.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult normal(string name, string last, string mail, string pass)
+        {
+            User user = new Models.User(name,last,mail,pass,-1);
+            db.Users.Add(user);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult login(string mail, string pass)
+        {
+            var pQuery = db.Users.Where(e => e.Email.Equals(mail) && e.Password.Equals(pass));
+            if(pQuery != null)
+            {
+                Session["user"] = mail;
+                return RedirectToAction("Index","Home");
+            }
+            else
+                return RedirectToAction("Index", "Home");
+
+        }
+
 
         // POST: User/Create
         // Afin de déjouer les attaques par survalidation, activez les propriétés spécifiques auxquelles vous voulez établir une liaison. Pour 
