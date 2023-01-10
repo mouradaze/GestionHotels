@@ -1,0 +1,44 @@
+﻿@model IEnumerable<GestHot.Models.Favorite>
+@{
+    ViewBag.Title = "Favorites";
+}
+
+<div class="container">
+    <div class="row my-5">
+        <h2 class="text-red">My Reservations</h2>
+    </div>
+    <div class="row my-3">
+        <table class="table">
+            <tr>
+                <th>
+                    <h4>Id Favor</h4>
+                </th>
+                <th>
+                    <h4>Id User</h4>
+                </th>
+                <th>
+                    <h4>Id Hotel</h4>
+                </th>
+
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.idF)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.idU)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.idH)
+                    </td>
+
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>
+

@@ -9,6 +9,14 @@
     <Property Name="idU" Type="int" Nullable="false" />
     <Property Name="idH" Type="int" Nullable="false" />
   </EntityType>
+  <EntityType Name="Favorites">
+    <Key>
+      <PropertyRef Name="idF" />
+    </Key>
+    <Property Name="idF" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idU" Type="int" Nullable="false" />
+    <Property Name="idH" Type="int" Nullable="false" />
+  </EntityType>
   <EntityType Name="Hotels">
     <Key>
       <PropertyRef Name="idH" />
@@ -53,6 +61,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="fk_idH_F">
+    <End Role="Hotels" Type="Self.Hotels" Multiplicity="1" />
+    <End Role="Favorites" Type="Self.Favorites" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hotels">
+        <PropertyRef Name="idH" />
+      </Principal>
+      <Dependent Role="Favorites">
+        <PropertyRef Name="idU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="fk_idH_rev">
     <End Role="Hotels" Type="Self.Hotels" Multiplicity="1" />
     <End Role="Comments" Type="Self.Comments" Multiplicity="*" />
@@ -77,6 +97,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="fk_idU_F">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Favorites" Type="Self.Favorites" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="idU" />
+      </Principal>
+      <Dependent Role="Favorites">
+        <PropertyRef Name="idU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="fk_idU_rev">
     <End Role="Users" Type="Self.Users" Multiplicity="1" />
     <End Role="Comments" Type="Self.Comments" Multiplicity="*" />
@@ -91,12 +123,17 @@
   </Association>
   <EntityContainer Name="GestHotModelStoreContainer">
     <EntitySet Name="Comments" EntityType="Self.Comments" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Favorites" EntityType="Self.Favorites" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Hotels" EntityType="Self.Hotels" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Reservation" EntityType="Self.Reservation" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="fk_idH" Association="Self.fk_idH">
       <End Role="Hotels" EntitySet="Hotels" />
       <End Role="Reservation" EntitySet="Reservation" />
+    </AssociationSet>
+    <AssociationSet Name="fk_idH_F" Association="Self.fk_idH_F">
+      <End Role="Hotels" EntitySet="Hotels" />
+      <End Role="Favorites" EntitySet="Favorites" />
     </AssociationSet>
     <AssociationSet Name="fk_idH_rev" Association="Self.fk_idH_rev">
       <End Role="Hotels" EntitySet="Hotels" />
@@ -105,6 +142,10 @@
     <AssociationSet Name="fk_idU" Association="Self.fk_idU">
       <End Role="Users" EntitySet="Users" />
       <End Role="Reservation" EntitySet="Reservation" />
+    </AssociationSet>
+    <AssociationSet Name="fk_idU_F" Association="Self.fk_idU_F">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Favorites" EntitySet="Favorites" />
     </AssociationSet>
     <AssociationSet Name="fk_idU_rev" Association="Self.fk_idU_rev">
       <End Role="Users" EntitySet="Users" />

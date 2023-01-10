@@ -48,6 +48,47 @@ namespace GestHot.Controllers
             return View();
         }
 
+        public ActionResult Reservation(int? id) {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            User user = db.Users.Find(id);
+            if (user == null)
+            {
+                return HttpNotFound();
+            }
+            return View(user.Reservations);
+        }
+        public ActionResult Favorites(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            User user = db.Users.Find(id);
+            if (user == null)
+            {
+                return HttpNotFound();
+            }
+            var pQuery = db.Hotels.
+            return View(user.Favorites);
+        }
+        public ActionResult Information(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            User user = db.Users.Find(id);
+            if (user == null)
+            {
+                return HttpNotFound();
+            }
+            return View(user.Reservations);
+        }
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult normal(string name, string last, string mail, string pass)
@@ -63,14 +104,22 @@ namespace GestHot.Controllers
         public ActionResult login(string mail, string pass)
         {
             var pQuery = db.Users.Where(e => e.Email.Equals(mail) && e.Password.Equals(pass));
+            var x = db.Users.FirstOrDefault(e => e.Email.Equals(mail) && e.Password.Equals(pass))?.idU;
             if(pQuery != null)
             {
-                Session["user"] = mail;
+                User usr = pQuery as Models.User;
+                
+                Session["userId"] = x.ToString();
                 return RedirectToAction("Index","Home");
             }
             else
                 return RedirectToAction("Index", "Home");
 
+        }
+        public ActionResult Logout()
+        {
+            Session["userId"] = null;
+            return RedirectToAction("Index", "Home");
         }
 
 

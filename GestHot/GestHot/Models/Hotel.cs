@@ -18,6 +18,7 @@ namespace GestHot.Models
         public Hotel()
         {
             this.Comments = new HashSet<Comment>();
+            this.Favorites = new HashSet<Favorite>();
             this.Reservations = new HashSet<Reservation>();
         }
     
@@ -30,6 +31,8 @@ namespace GestHot.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Comment> Comments { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Favorite> Favorites { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Reservation> Reservations { get; set; }
     }

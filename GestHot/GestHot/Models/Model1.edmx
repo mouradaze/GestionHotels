@@ -14,6 +14,14 @@
           <Property Name="idU" Type="int" Nullable="false" />
           <Property Name="idH" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="Favorites">
+          <Key>
+            <PropertyRef Name="idF" />
+          </Key>
+          <Property Name="idF" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idU" Type="int" Nullable="false" />
+          <Property Name="idH" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="Hotels">
           <Key>
             <PropertyRef Name="idH" />
@@ -58,6 +66,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="fk_idH_F">
+          <End Role="Hotels" Type="Self.Hotels" Multiplicity="1" />
+          <End Role="Favorites" Type="Self.Favorites" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hotels">
+              <PropertyRef Name="idH" />
+            </Principal>
+            <Dependent Role="Favorites">
+              <PropertyRef Name="idU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="fk_idH_rev">
           <End Role="Hotels" Type="Self.Hotels" Multiplicity="1" />
           <End Role="Comments" Type="Self.Comments" Multiplicity="*" />
@@ -82,6 +102,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="fk_idU_F">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Favorites" Type="Self.Favorites" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="idU" />
+            </Principal>
+            <Dependent Role="Favorites">
+              <PropertyRef Name="idU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="fk_idU_rev">
           <End Role="Users" Type="Self.Users" Multiplicity="1" />
           <End Role="Comments" Type="Self.Comments" Multiplicity="*" />
@@ -96,12 +128,17 @@
         </Association>
         <EntityContainer Name="GestHotModelStoreContainer">
           <EntitySet Name="Comments" EntityType="Self.Comments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Favorites" EntityType="Self.Favorites" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Hotels" EntityType="Self.Hotels" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Reservation" EntityType="Self.Reservation" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="fk_idH" Association="Self.fk_idH">
             <End Role="Hotels" EntitySet="Hotels" />
             <End Role="Reservation" EntitySet="Reservation" />
+          </AssociationSet>
+          <AssociationSet Name="fk_idH_F" Association="Self.fk_idH_F">
+            <End Role="Hotels" EntitySet="Hotels" />
+            <End Role="Favorites" EntitySet="Favorites" />
           </AssociationSet>
           <AssociationSet Name="fk_idH_rev" Association="Self.fk_idH_rev">
             <End Role="Hotels" EntitySet="Hotels" />
@@ -110,6 +147,10 @@
           <AssociationSet Name="fk_idU" Association="Self.fk_idU">
             <End Role="Users" EntitySet="Users" />
             <End Role="Reservation" EntitySet="Reservation" />
+          </AssociationSet>
+          <AssociationSet Name="fk_idU_F" Association="Self.fk_idU_F">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Favorites" EntitySet="Favorites" />
           </AssociationSet>
           <AssociationSet Name="fk_idU_rev" Association="Self.fk_idU_rev">
             <End Role="Users" EntitySet="Users" />
@@ -122,6 +163,7 @@
       <Schema Namespace="GestHotModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="GestHotEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Comments" EntityType="GestHotModel.Comment" />
+          <EntitySet Name="Favorites" EntityType="GestHotModel.Favorite" />
           <EntitySet Name="Hotels" EntityType="GestHotModel.Hotel" />
           <EntitySet Name="Reservations" EntityType="GestHotModel.Reservation" />
           <EntitySet Name="Users" EntityType="GestHotModel.User" />
@@ -132,6 +174,14 @@
           <AssociationSet Name="fk_idU_rev" Association="GestHotModel.fk_idU_rev">
             <End Role="User" EntitySet="Users" />
             <End Role="Comment" EntitySet="Comments" />
+          </AssociationSet>
+          <AssociationSet Name="fk_idH_F" Association="GestHotModel.fk_idH_F">
+            <End Role="Hotel" EntitySet="Hotels" />
+            <End Role="Favorite" EntitySet="Favorites" />
+          </AssociationSet>
+          <AssociationSet Name="fk_idU_F" Association="GestHotModel.fk_idU_F">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Favorite" EntitySet="Favorites" />
           </AssociationSet>
           <AssociationSet Name="fk_idH" Association="GestHotModel.fk_idH">
             <End Role="Hotel" EntitySet="Hotels" />
@@ -153,6 +203,16 @@
           <NavigationProperty Name="Hotel" Relationship="GestHotModel.fk_idH_rev" FromRole="Comment" ToRole="Hotel" />
           <NavigationProperty Name="User" Relationship="GestHotModel.fk_idU_rev" FromRole="Comment" ToRole="User" />
         </EntityType>
+        <EntityType Name="Favorite">
+          <Key>
+            <PropertyRef Name="idF" />
+          </Key>
+          <Property Name="idF" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idU" Type="Int32" Nullable="false" />
+          <Property Name="idH" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Hotel" Relationship="GestHotModel.fk_idH_F" FromRole="Favorite" ToRole="Hotel" />
+          <NavigationProperty Name="User" Relationship="GestHotModel.fk_idU_F" FromRole="Favorite" ToRole="User" />
+        </EntityType>
         <EntityType Name="Hotel">
           <Key>
             <PropertyRef Name="idH" />
@@ -164,6 +224,7 @@
           <Property Name="nbCH" Type="Int32" />
           <Property Name="note" Type="Decimal" Precision="18" Scale="0" />
           <NavigationProperty Name="Comments" Relationship="GestHotModel.fk_idH_rev" FromRole="Hotel" ToRole="Comment" />
+          <NavigationProperty Name="Favorites" Relationship="GestHotModel.fk_idH_F" FromRole="Hotel" ToRole="Favorite" />
           <NavigationProperty Name="Reservations" Relationship="GestHotModel.fk_idH" FromRole="Hotel" ToRole="Reservation" />
         </EntityType>
         <EntityType Name="Reservation">
@@ -189,6 +250,7 @@
           <Property Name="Password" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="Role" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Comments" Relationship="GestHotModel.fk_idU_rev" FromRole="User" ToRole="Comment" />
+          <NavigationProperty Name="Favorites" Relationship="GestHotModel.fk_idU_F" FromRole="User" ToRole="Favorite" />
           <NavigationProperty Name="Reservations" Relationship="GestHotModel.fk_idU" FromRole="User" ToRole="Reservation" />
         </EntityType>
         <Association Name="fk_idH_rev">
@@ -211,6 +273,30 @@
               <PropertyRef Name="idU" />
             </Principal>
             <Dependent Role="Comment">
+              <PropertyRef Name="idU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_idH_F">
+          <End Type="GestHotModel.Hotel" Role="Hotel" Multiplicity="1" />
+          <End Type="GestHotModel.Favorite" Role="Favorite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Hotel">
+              <PropertyRef Name="idH" />
+            </Principal>
+            <Dependent Role="Favorite">
+              <PropertyRef Name="idU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_idU_F">
+          <End Type="GestHotModel.User" Role="User" Multiplicity="1" />
+          <End Type="GestHotModel.Favorite" Role="Favorite" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="idU" />
+            </Principal>
+            <Dependent Role="Favorite">
               <PropertyRef Name="idU" />
             </Dependent>
           </ReferentialConstraint>
@@ -239,7 +325,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -252,6 +338,15 @@
                 <ScalarProperty Name="idU" ColumnName="idU" />
                 <ScalarProperty Name="message" ColumnName="message" />
                 <ScalarProperty Name="idC" ColumnName="idC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Favorites">
+            <EntityTypeMapping TypeName="GestHotModel.Favorite">
+              <MappingFragment StoreEntitySet="Favorites">
+                <ScalarProperty Name="idH" ColumnName="idH" />
+                <ScalarProperty Name="idU" ColumnName="idU" />
+                <ScalarProperty Name="idF" ColumnName="idF" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

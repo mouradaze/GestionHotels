@@ -33,7 +33,7 @@
                     </li>
                 </ul>
                 <div>
-                    @if (Session["user"] != null)
+                    @if (Session["userId"] != null)
                     {
                         <div class="container">
                             <li class="nav-item dropdown no-marker">
@@ -44,22 +44,22 @@
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <li class="dropdown-header">Welcome, Name</li>
                                     <li>
-                                        <a class="dropdown-item" href="#">
+                                        <a class="dropdown-item" href="User/Favorites/@Session["userId"].ToString()">
                                         <i class="bi bi-star-fill"></i> Favorites
                                         </a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="#">
+                                        <a class="dropdown-item" href="User/Reservation/@Session["userId"].ToString()">
                                         <i class="bi bi-airplane-fill"></i> My reservations
                                         </a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="#">
+                                        <a class="dropdown-item" href="User/Information/@Session["userId"].ToString()">
                                         <i class="bi bi-info-square-fill"></i> My information
                                         </a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="#">
+                                        <a class="dropdown-item" href="User/Logout">
                                         <i class="bi bi-door-open-fill"></i> Log out
                                         </a>
                                     </li>

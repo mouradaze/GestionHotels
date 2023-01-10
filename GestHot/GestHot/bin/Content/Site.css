@@ -22,6 +22,9 @@
 .color-secondary {
     background-color : green;
 }
+.no-marker {
+    list-style-type: none;
+}
 .no-color {
     text-decoration: none !important;
     color: black;

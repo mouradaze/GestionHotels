@@ -11,6 +11,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Favorites">
+      <EntityTypeMapping TypeName="GestHotModel.Favorite">
+        <MappingFragment StoreEntitySet="Favorites">
+          <ScalarProperty Name="idH" ColumnName="idH" />
+          <ScalarProperty Name="idU" ColumnName="idU" />
+          <ScalarProperty Name="idF" ColumnName="idF" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Hotels">
       <EntityTypeMapping TypeName="GestHotModel.Hotel">
         <MappingFragment StoreEntitySet="Hotels">

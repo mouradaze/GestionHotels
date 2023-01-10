@@ -5,12 +5,15 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="dd50c2635eef4b23b7c29df21ffd9c6a" Name="Diagram1">
-        <EntityTypeShape EntityType="GestHotModel.Comment" Width="1.5" PointX="3" PointY="0.75" />
-        <EntityTypeShape EntityType="GestHotModel.Hotel" Width="1.5" PointX="0.75" PointY="7.125" />
-        <EntityTypeShape EntityType="GestHotModel.Reservation" Width="1.5" PointX="3" PointY="3.625" />
-        <EntityTypeShape EntityType="GestHotModel.User" Width="1.5" PointX="0.75" PointY="3.5" />
+        <EntityTypeShape EntityType="GestHotModel.Comment" Width="1.5" PointX="3" PointY="2" />
+        <EntityTypeShape EntityType="GestHotModel.Favorite" Width="1.5" PointX="3" PointY="8.125" />
+        <EntityTypeShape EntityType="GestHotModel.Hotel" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="GestHotModel.Reservation" Width="1.5" PointX="3" PointY="5" />
+        <EntityTypeShape EntityType="GestHotModel.User" Width="1.5" PointX="0.75" PointY="4.75" />
         <AssociationConnector Association="GestHotModel.fk_idH_rev" />
         <AssociationConnector Association="GestHotModel.fk_idU_rev" />
+        <AssociationConnector Association="GestHotModel.fk_idH_F" />
+        <AssociationConnector Association="GestHotModel.fk_idU_F" />
         <AssociationConnector Association="GestHotModel.fk_idH" />
         <AssociationConnector Association="GestHotModel.fk_idU" />
       </Diagram>
