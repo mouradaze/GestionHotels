@@ -62,6 +62,7 @@ namespace GestHot.Controllers
         }
         public ActionResult Favorites(int? id)
         {
+            
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -71,8 +72,10 @@ namespace GestHot.Controllers
             {
                 return HttpNotFound();
             }
-            var pQuery = db.Hotels.
-            return View(user.Favorites);
+            //var hot = user.Favorites.Select(e => e.idH);
+            //var hot = db.Hotels.Include(e => e.idH);
+            //List<Hotel> pQuery = (from h in db.Hotels join ho in user.Favorites on h.idH equals ho.idH select h).ToList();
+            return View(user);
         }
         public ActionResult Information(int? id)
         {

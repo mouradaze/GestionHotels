@@ -243,7 +243,9 @@
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\User\normal.cshtml" />
     <Content Include="Views\User\Reservation.cshtml" />
-    <Content Include="Views\User\Favorites.cshtml" />
+    <Content Include="Views\User\Favorites.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
