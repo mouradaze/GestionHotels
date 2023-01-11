@@ -54,6 +54,8 @@ namespace GestHot.Controllers
         {
             if (ModelState.IsValid)
             {
+                
+                hotel.idU = int.Parse((string)Session["userID"]);
                 db.Hotels.Add(hotel);
                 db.SaveChanges();
                 return RedirectToAction("Index");

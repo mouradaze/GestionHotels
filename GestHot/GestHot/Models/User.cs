@@ -19,20 +19,23 @@ namespace GestHot.Models
         {
             this.Comments = new HashSet<Comment>();
             this.Favorites = new HashSet<Favorite>();
+            this.Hotels = new HashSet<Hotel>();
             this.Reservations = new HashSet<Reservation>();
         }
-        public User(string name, string last, string mail, string pass, int role)
+        public User( string name, string lastName, string email, string password, int role)
         {
-            this.Name = name;
-            this.LastName= last;
-            this.Email = mail;
-            this.Password = pass;
-            this.Role = role;
+            
+            Name = name;
+            LastName = lastName;
+            Email = email;
+            Password = password;
+            Role = role;
             this.Comments = new HashSet<Comment>();
             this.Favorites = new HashSet<Favorite>();
+            this.Hotels = new HashSet<Hotel>();
             this.Reservations = new HashSet<Reservation>();
         }
-    
+
         public int idU { get; set; }
         public string Name { get; set; }
         public string LastName { get; set; }
@@ -44,6 +47,8 @@ namespace GestHot.Models
         public virtual ICollection<Comment> Comments { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Favorite> Favorites { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Hotel> Hotels { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Reservation> Reservations { get; set; }
     }

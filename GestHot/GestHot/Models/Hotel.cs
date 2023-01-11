@@ -11,7 +11,8 @@ namespace GestHot.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Hotel
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,13 +22,17 @@ namespace GestHot.Models
             this.Favorites = new HashSet<Favorite>();
             this.Reservations = new HashSet<Reservation>();
         }
-    
+        
+
         public int idH { get; set; }
         public string name { get; set; }
         public string adresse { get; set; }
+
+        [DataType(DataType.MultilineText)]
         public string description { get; set; }
         public Nullable<int> nbCH { get; set; }
         public Nullable<decimal> note { get; set; }
+        public Nullable<int> idU { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Comment> Comments { get; set; }
@@ -35,5 +40,6 @@ namespace GestHot.Models
         public virtual ICollection<Favorite> Favorites { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Reservation> Reservations { get; set; }
+        public virtual User User { get; set; }
     }
 }

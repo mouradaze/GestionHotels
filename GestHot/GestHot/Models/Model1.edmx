@@ -32,6 +32,7 @@
           <Property Name="description" Type="varchar" MaxLength="100" />
           <Property Name="nbCH" Type="int" />
           <Property Name="note" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="idU" Type="int" />
         </EntityType>
         <EntityType Name="Reservation">
           <Key>
@@ -114,6 +115,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_idU_H">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Hotels" Type="Self.Hotels" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="idU" />
+            </Principal>
+            <Dependent Role="Hotels">
+              <PropertyRef Name="idU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="fk_idU_rev">
           <End Role="Users" Type="Self.Users" Multiplicity="1" />
           <End Role="Comments" Type="Self.Comments" Multiplicity="*" />
@@ -152,6 +165,10 @@
             <End Role="Users" EntitySet="Users" />
             <End Role="Favorites" EntitySet="Favorites" />
           </AssociationSet>
+          <AssociationSet Name="FK_idU_H" Association="Self.FK_idU_H">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Hotels" EntitySet="Hotels" />
+          </AssociationSet>
           <AssociationSet Name="fk_idU_rev" Association="Self.fk_idU_rev">
             <End Role="Users" EntitySet="Users" />
             <End Role="Comments" EntitySet="Comments" />
@@ -186,6 +203,10 @@
           <AssociationSet Name="fk_idH" Association="GestHotModel.fk_idH">
             <End Role="Hotel" EntitySet="Hotels" />
             <End Role="Reservation" EntitySet="Reservations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_idU_H" Association="GestHotModel.FK_idU_H">
+            <End Role="User" EntitySet="Users" />
+            <End Role="Hotel" EntitySet="Hotels" />
           </AssociationSet>
           <AssociationSet Name="fk_idU" Association="GestHotModel.fk_idU">
             <End Role="User" EntitySet="Users" />
@@ -223,9 +244,11 @@
           <Property Name="description" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="nbCH" Type="Int32" />
           <Property Name="note" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="idU" Type="Int32" />
           <NavigationProperty Name="Comments" Relationship="GestHotModel.fk_idH_rev" FromRole="Hotel" ToRole="Comment" />
           <NavigationProperty Name="Favorites" Relationship="GestHotModel.fk_idH_F" FromRole="Hotel" ToRole="Favorite" />
           <NavigationProperty Name="Reservations" Relationship="GestHotModel.fk_idH" FromRole="Hotel" ToRole="Reservation" />
+          <NavigationProperty Name="User" Relationship="GestHotModel.FK_idU_H" FromRole="Hotel" ToRole="User" />
         </EntityType>
         <EntityType Name="Reservation">
           <Key>
@@ -251,6 +274,7 @@
           <Property Name="Role" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Comments" Relationship="GestHotModel.fk_idU_rev" FromRole="User" ToRole="Comment" />
           <NavigationProperty Name="Favorites" Relationship="GestHotModel.fk_idU_F" FromRole="User" ToRole="Favorite" />
+          <NavigationProperty Name="Hotels" Relationship="GestHotModel.FK_idU_H" FromRole="User" ToRole="Hotel" />
           <NavigationProperty Name="Reservations" Relationship="GestHotModel.fk_idU" FromRole="User" ToRole="Reservation" />
         </EntityType>
         <Association Name="fk_idH_rev">
@@ -313,6 +337,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_idU_H">
+          <End Type="GestHotModel.User" Role="User" Multiplicity="0..1" />
+          <End Type="GestHotModel.Hotel" Role="Hotel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="idU" />
+            </Principal>
+            <Dependent Role="Hotel">
+              <PropertyRef Name="idU" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="fk_idU">
           <End Type="GestHotModel.User" Role="User" Multiplicity="1" />
           <End Type="GestHotModel.Reservation" Role="Reservation" Multiplicity="*" />
@@ -353,6 +389,7 @@
           <EntitySetMapping Name="Hotels">
             <EntityTypeMapping TypeName="GestHotModel.Hotel">
               <MappingFragment StoreEntitySet="Hotels">
+                <ScalarProperty Name="idU" ColumnName="idU" />
                 <ScalarProperty Name="note" ColumnName="note" />
                 <ScalarProperty Name="nbCH" ColumnName="nbCH" />
                 <ScalarProperty Name="description" ColumnName="description" />

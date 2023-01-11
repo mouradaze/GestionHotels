@@ -106,14 +106,27 @@ namespace GestHot.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult login(string mail, string pass)
         {
-            var pQuery = db.Users.Where(e => e.Email.Equals(mail) && e.Password.Equals(pass));
+            var pQuery = db.Users.FirstOrDefault(e => e.Email.Equals(mail) && e.Password.Equals(pass));
             var x = db.Users.FirstOrDefault(e => e.Email.Equals(mail) && e.Password.Equals(pass))?.idU;
             if(pQuery != null)
             {
                 User usr = pQuery as Models.User;
+                if(pQuery.Role == 0)
+                {
+                    Session["userId"] = x.ToString();
+                    return RedirectToAction("Index", "Owner", new {id = x});
+                }
+                else if(pQuery.Role == -1)
+                {
+                    Session["userId"] = x.ToString();
+                    return RedirectToAction("Index","Home");
+                }
+                else
+                {
+                    Session["userId"] = x.ToString();
+                    return RedirectToAction("Index", "Admin");
+                }
                 
-                Session["userId"] = x.ToString();
-                return RedirectToAction("Index","Home");
             }
             else
                 return RedirectToAction("Index", "Home");

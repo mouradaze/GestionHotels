@@ -1,0 +1,53 @@
+﻿@model GestHot.Models.Hotel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+
+<div class="container">
+    <div class="row my-5">
+        <h2 class="text-red">Edit</h2>
+    </div>
+    <div class="row my-3">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(model => model.idH)
+            @Html.HiddenFor(model => model.note)
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Name</label>
+                        @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Adresse</label>
+                        @Html.EditorFor(model => model.adresse, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="mb-3">
+                        <label class="form-label">Description</label>
+                        @Html.EditorFor(model => model.description, new { htmlAttributes = new { @class = "form-control", @rows = 5 } })
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Number of rooms</label>
+                        @Html.EditorFor(model => model.nbCH, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                </div>
+                
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        }
+
+    </div>
+</div>

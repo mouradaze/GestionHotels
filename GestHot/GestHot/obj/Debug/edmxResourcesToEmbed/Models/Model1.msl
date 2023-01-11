@@ -23,6 +23,7 @@
     <EntitySetMapping Name="Hotels">
       <EntityTypeMapping TypeName="GestHotModel.Hotel">
         <MappingFragment StoreEntitySet="Hotels">
+          <ScalarProperty Name="idU" ColumnName="idU" />
           <ScalarProperty Name="note" ColumnName="note" />
           <ScalarProperty Name="nbCH" ColumnName="nbCH" />
           <ScalarProperty Name="description" ColumnName="description" />

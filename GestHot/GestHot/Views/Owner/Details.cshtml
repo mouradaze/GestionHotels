@@ -1,0 +1,43 @@
+﻿@model GestHot.Models.Hotel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+<div class="container">
+    <div class="row my-5">
+        <h2 class="text-red">Details</h2>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <h4 class="text-red">@Html.DisplayFor(model => model.name)</h4>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-sm-8">
+                    <h4>@Html.DisplayNameFor(model => model.name)</h4>
+                    <p>@Html.DisplayFor(model => model.name)</p>
+                </div>
+                <div class="col-sm-8">
+                    <h4>@Html.DisplayNameFor(model => model.adresse)</h4>
+                    <p>@Html.DisplayFor(model => model.adresse)</p>
+                </div>
+            </div>
+            <div class="row">
+                <h4>@Html.DisplayNameFor(model => model.description)</h4>
+                <p>@Html.DisplayFor(model => model.description)</p>
+            </div>
+            <div class="row">
+                <div class="col-sm-8">
+                    <h4>Number of rooms</h4>
+                    <p>@Html.DisplayFor(model => model.nbCH)</p>
+                </div>
+                <div class="col-sm-8">
+                    <h4>@Html.DisplayNameFor(model => model.note)</h4>
+                    <p>@Html.DisplayFor(model => model.note)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

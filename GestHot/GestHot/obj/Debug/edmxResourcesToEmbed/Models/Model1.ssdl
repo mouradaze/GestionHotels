@@ -27,6 +27,7 @@
     <Property Name="description" Type="varchar" MaxLength="100" />
     <Property Name="nbCH" Type="int" />
     <Property Name="note" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="idU" Type="int" />
   </EntityType>
   <EntityType Name="Reservation">
     <Key>
@@ -109,6 +110,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_idU_H">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Hotels" Type="Self.Hotels" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="idU" />
+      </Principal>
+      <Dependent Role="Hotels">
+        <PropertyRef Name="idU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="fk_idU_rev">
     <End Role="Users" Type="Self.Users" Multiplicity="1" />
     <End Role="Comments" Type="Self.Comments" Multiplicity="*" />
@@ -146,6 +159,10 @@
     <AssociationSet Name="fk_idU_F" Association="Self.fk_idU_F">
       <End Role="Users" EntitySet="Users" />
       <End Role="Favorites" EntitySet="Favorites" />
+    </AssociationSet>
+    <AssociationSet Name="FK_idU_H" Association="Self.FK_idU_H">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Hotels" EntitySet="Hotels" />
     </AssociationSet>
     <AssociationSet Name="fk_idU_rev" Association="Self.fk_idU_rev">
       <End Role="Users" EntitySet="Users" />

@@ -1,0 +1,43 @@
+﻿@model IEnumerable<GestHot.Models.Comment>
+
+@{
+    ViewBag.Title = "Comments";
+}
+
+<div class="container">
+    <div class="row my-5">
+        <h2 class="text-red">Comments</h2>
+    </div>
+    <div class="my-3 row">
+        <table class="table">
+            <tr>
+                <th>
+                    <h4>Comment</h4>
+                </th>
+                <th>
+                    <h4>User Name</h4>
+                </th>
+                <th>
+                    <h4>Comment rating</h4>
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.message)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.User.Name)
+                    </td>
+                    <td>
+                        <p>Good or bad</p>
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>
+
