@@ -1,0 +1,59 @@
+﻿@model IEnumerable<GestHot.Models.User>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+                <div class="row my-3">
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-body">
+                                <div id="myChart"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                        <div class="card-body">
+                            <div id="myChart2"></div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row my-5">
+                    <h3 class="text-uppercase text-center">users</h3>
+                </div>
+                <div class="row my-3">
+                    
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Last name</th>
+                                    <th scope="col">E-mail</th>
+                                    <th scope="col">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <th scope="row">@Html.DisplayFor(modelItem => item.Name)</th>
+                                        <th>@Html.DisplayFor(modelItem => item.LastName)</th>
+                                        <th>@Html.DisplayFor(modelItem => item.Email)</th>
+                                        <th>
+                                            <a data-bs-toggle="tooltip" data-bs-placement="top" title="BlackList" class="no-color">
+                                                <i class="bi bi-exclamation-square-fill"></i>
+                                            </a>
+                                            <a href="@Url.Action("Details", "User",new {id = item.idU})" data-bs-toggle="tooltip" data-bs-placement="top" title="See Details" class="mx-2 no-color">
+                                                <i class="bi bi-info-square-fill"></i>
+                                            </a>
+                                        </th>
+                                    </tr>
+                                }
+                                </tbody>
+                        </table>
+                    </div>
+                </div>

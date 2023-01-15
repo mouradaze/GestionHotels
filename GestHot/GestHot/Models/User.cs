@@ -11,7 +11,8 @@ namespace GestHot.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class User
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -22,14 +23,14 @@ namespace GestHot.Models
             this.Hotels = new HashSet<Hotel>();
             this.Reservations = new HashSet<Reservation>();
         }
-        public User( string name, string lastName, string email, string password, int role)
+
+        public User(string name, string last, string email, string pass, int role)
         {
-            
-            Name = name;
-            LastName = lastName;
-            Email = email;
-            Password = password;
-            Role = role;
+            this.Name = name;
+            this.LastName = last;
+            this.Email = email;
+            this.Password = pass;
+            this.Role = role;
             this.Comments = new HashSet<Comment>();
             this.Favorites = new HashSet<Favorite>();
             this.Hotels = new HashSet<Hotel>();
@@ -37,9 +38,14 @@ namespace GestHot.Models
         }
 
         public int idU { get; set; }
+        [Required(ErrorMessage = "Name required")]
         public string Name { get; set; }
         public string LastName { get; set; }
+        [Required(ErrorMessage = "E-mail is required")]
+        [EmailAddress]
         public string Email { get; set; }
+        [Required(ErrorMessage = "Password is required")]
+        [DataType(DataType.Password)]
         public string Password { get; set; }
         public int Role { get; set; }
     

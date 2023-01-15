@@ -5,6 +5,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="dd50c2635eef4b23b7c29df21ffd9c6a" Name="Diagram1">
+        <EntityTypeShape EntityType="GestHotModel.BlackList" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="GestHotModel.Comment" Width="1.5" PointX="5.25" PointY="6.125" />
         <EntityTypeShape EntityType="GestHotModel.Favorite" Width="1.5" PointX="5.25" PointY="9.125" />
         <EntityTypeShape EntityType="GestHotModel.Hotel" Width="1.5" PointX="3" PointY="7" />

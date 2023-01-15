@@ -22,14 +22,15 @@ namespace GestHot.Models
             this.Favorites = new HashSet<Favorite>();
             this.Reservations = new HashSet<Reservation>();
         }
-        
-
+    
         public int idH { get; set; }
+        [Required(ErrorMessage = "Name is required")]
         public string name { get; set; }
+        [Required(ErrorMessage = "Adresse is required")]
         public string adresse { get; set; }
 
-        [DataType(DataType.MultilineText)]
         public string description { get; set; }
+        [Required(ErrorMessage = "Number of rooms is required")]
         public Nullable<int> nbCH { get; set; }
         public Nullable<decimal> note { get; set; }
         public Nullable<int> idU { get; set; }

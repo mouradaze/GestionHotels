@@ -1,49 +1,42 @@
-﻿@model GestHot.Models.User
+﻿@model IEnumerable<GestHot.Models.Favorite>
+
 @{
     ViewBag.Title = "Favorites";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <div class="container">
-    <div class="row my-5">
-        <h2 class="text-red">My Reservations</h2>
-    </div>
-    <div class="row my-3">
-        <table class="table">
-            <tr>
-                <th>
-                    <h4>Id Favor</h4>
-                </th>
-                <th>
-                    <h4>Id User</h4>
-                </th>
-                <th>
-                    <h4>Id Hotel</h4>
-                </th>
+    @if (Model.Count() == 0)
+    {
+        <h5 class="text-center text-uppercase my-5">No favorites Available now.</h5>
+    }
 
-            </tr>
+    @foreach (var item in Model)
+    {
 
-            @{var it = Model;
-                }
-                @foreach (var item in it.Favorites)
-                {
-                    
-                <tr>
-                    <td>
-                        @item.Hotel.name
-                        
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Hotel.adresse)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Hotel.nbCH)
-                    </td>
+        <div class="col-sm-6 mx-4">
+            <div class="card my-5">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <img src="~/images/search.jpg" class="img-thumbnail" />
+                        </div>
+                        <div class="col-sm-8">
 
-                </tr>
-                }
-            
+                            <h2 class="my-2">
+                                <h4 class="no-color">
+                                    @Html.DisplayFor(modelItem => item.Hotel.name)
+                                </h4>
 
-        </table>
-    </div>
+                            </h2>
+
+                            <h4>@Html.DisplayFor(modelItem => item.Hotel.adresse)</h4>
+                            <p>@Html.DisplayFor(modelItem => item.Hotel.description)</p>
+                            @Html.ActionLink("Reserve now", "Details", "Hotel", new { id = item.idH }, new { @class = "btn btn-red" })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
 </div>
-

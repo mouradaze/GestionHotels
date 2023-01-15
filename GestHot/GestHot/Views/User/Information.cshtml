@@ -1,0 +1,24 @@
+﻿@model GestHot.Models.User
+
+@{
+    ViewBag.Title = "Information";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container">
+    <div class="row my-5">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="text-center text-uppercase text-red">@Html.DisplayFor(model => model.Name) @Html.DisplayFor(model => model.LastName)</h2>
+            </div>
+            <div class="card-body">
+
+                <h5>E-mail : @Html.DisplayFor(model => model.Email)</h5>
+                <h5>Favorite hotels : @Html.DisplayFor(model => model.Favorites.Count)</h5>
+                <h5>Reviews : @Html.DisplayFor(model => model.Comments.Count)</h5>
+            </div>
+        </div>
+    </div>
+</div>
+

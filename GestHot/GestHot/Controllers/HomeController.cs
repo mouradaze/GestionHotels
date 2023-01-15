@@ -13,7 +13,7 @@ namespace GestHot.Controllers
         public ActionResult Index()
         {
             
-            return View(db.Hotels.ToList());
+            return View(db.Hotels.ToList().Take(4));
         }
 
         public ActionResult AllHotels()

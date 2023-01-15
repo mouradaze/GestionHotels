@@ -7,7 +7,7 @@
     <div class="searchh d-flex align-items-center justify-content-center my-4">
         <div class="col-5 ">
             <div class="input-group mb-3 ">
-                <input type="text" class="form-control" placeholder="Where to ?" aria-label="Username" aria-describedby="basic-addon1">
+                <input type="text" name="search" class="form-control" placeholder="Where to ?" aria-label="Username" aria-describedby="basic-addon1">
             </div>
         </div>
 
@@ -21,7 +21,7 @@
         </div>
         <div class="row mb-3">
             <div class="col-3">
-                <a class="btn btn-red">Reserve Now</a>
+                @Html.ActionLink("See the list", "Index", "Hotel", null, new { @class = "btn btn-red" })
             </div>
 
         </div>

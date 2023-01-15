@@ -1,0 +1,7 @@
+- See Users
+- See owners
+- See hotels
+- See Reviews
+- See reservations
+- See statistiques
+- See Blacklist

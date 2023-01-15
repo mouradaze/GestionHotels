@@ -1,0 +1,38 @@
+﻿@model IEnumerable<GestHot.Models.BlackList>
+
+@{
+    ViewBag.Title = "BlackList";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+
+<div class="row my-5">
+    <h3 class="text-uppercase text-center">blacklisters</h3>
+</div>
+<div class="row my-3">
+
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">E-mail</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <th scope="row">@Html.DisplayFor(modelItem => item.idB)</th>
+                        <th>@Html.DisplayFor(modelItem => item.emailB)</th>
+                        <th>
+                           <a data-bs-toggle="tooltip" data-bs-placement="top" title="Delete from blacklist" class="mx-2 no-color" href="@Url.Action("Delete","Owner")"><i class="bi bi-trash3-fill"></i></a> 
+                        </th>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

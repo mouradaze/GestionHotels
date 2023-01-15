@@ -33,7 +33,7 @@
                 <div class="col-sm-12">
                     <div class="mb-3">
                         <label class="form-label">Description</label>
-                        @Html.EditorFor(model => model.description, new { htmlAttributes = new { @class = "form-control", @rows = 5 } })
+                        @Html.TextAreaFor(model => model.description,  new { @class = "form-control" })
                     </div>
                 </div>
             </div>

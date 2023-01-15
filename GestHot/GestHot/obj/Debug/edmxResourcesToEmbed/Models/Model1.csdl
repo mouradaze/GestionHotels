@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="GestHotModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityContainer Name="GestHotEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BlackLists" EntityType="GestHotModel.BlackList" />
     <EntitySet Name="Comments" EntityType="GestHotModel.Comment" />
     <EntitySet Name="Favorites" EntityType="GestHotModel.Favorite" />
     <EntitySet Name="Hotels" EntityType="GestHotModel.Hotel" />
@@ -35,6 +36,13 @@
       <End Role="Reservation" EntitySet="Reservations" />
     </AssociationSet>
   </EntityContainer>
+  <EntityType Name="BlackList">
+    <Key>
+      <PropertyRef Name="idB" />
+    </Key>
+    <Property Name="idB" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="emailB" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
   <EntityType Name="Comment">
     <Key>
       <PropertyRef Name="idC" />

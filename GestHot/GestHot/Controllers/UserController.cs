@@ -75,7 +75,7 @@ namespace GestHot.Controllers
             //var hot = user.Favorites.Select(e => e.idH);
             //var hot = db.Hotels.Include(e => e.idH);
             //List<Hotel> pQuery = (from h in db.Hotels join ho in user.Favorites on h.idH equals ho.idH select h).ToList();
-            return View(user);
+            return View(user.Favorites);
         }
         public ActionResult Information(int? id)
         {
@@ -88,7 +88,7 @@ namespace GestHot.Controllers
             {
                 return HttpNotFound();
             }
-            return View(user.Reservations);
+            return View(user);
         }
 
 
@@ -99,7 +99,7 @@ namespace GestHot.Controllers
             User user = new Models.User(name,last,mail,pass,-1);
             db.Users.Add(user);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index","Home");
         }
 
         [HttpPost]

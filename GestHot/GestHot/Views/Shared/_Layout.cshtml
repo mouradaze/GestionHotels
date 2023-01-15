@@ -44,22 +44,23 @@
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <li class="dropdown-header">Welcome, Name</li>
                                     <li>
-                                        <a class="dropdown-item" href="User/Favorites/@Session["userId"].ToString()">
-                                        <i class="bi bi-star-fill"></i> Favorites
+                                        
+                                        <a class="dropdown-item" href="@Url.Action("../User/Favorites/"+@Session["userId"].ToString()) ">
+                                            <i class="bi bi-star-fill"></i> Favorites
                                         </a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="User/Reservation/@Session["userId"].ToString()">
+                                        <a class="dropdown-item" href="@Url.Action("../User/Reservation/"+@Session["userId"].ToString())">
                                         <i class="bi bi-airplane-fill"></i> My reservations
                                         </a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="User/Information/@Session["userId"].ToString()">
+                                        <a class="dropdown-item" href="@Url.Action("../User/Information/"+@Session["userId"].ToString())">
                                         <i class="bi bi-info-square-fill"></i> My information
                                         </a>
                                     </li>
                                     <li>
-                                        <a class="dropdown-item" href="User/Logout">
+                                        <a class="dropdown-item" href="@Url.Action("../User/Logout")">
                                         <i class="bi bi-door-open-fill"></i> Log out
                                         </a>
                                     </li>

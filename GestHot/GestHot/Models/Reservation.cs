@@ -11,13 +11,18 @@ namespace GestHot.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Reservation
     {
         public int idR { get; set; }
         public int idU { get; set; }
         public int idH { get; set; }
+        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}")]
+        [Required(ErrorMessage = "Start date is required")]
         public Nullable<System.DateTime> startR { get; set; }
+        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}")]
+        [Required(ErrorMessage = "End date is required")]
         public Nullable<System.DateTime> endR { get; set; }
     
         public virtual Hotel Hotel { get; set; }

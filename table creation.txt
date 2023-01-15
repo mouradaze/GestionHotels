@@ -33,3 +33,8 @@ create table Comments(
 	CONSTRAINT fk_idU_rev foreign key (idU) references Users(idU),
 	CONSTRAINT fk_idH_rev foreign key (idH) references Hotels(idH),
 );
+
+create table BlackList(
+	idB int NOT NULL IDENTITY(1,1),
+	emailB varchar(50) NOT NULL
+);

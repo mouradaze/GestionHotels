@@ -89,4 +89,3 @@ E:\Documents\school\4eme\.net\projet\implementation\GestHot\GestHot\bin\EntityFr
 E:\Documents\school\4eme\.net\projet\implementation\GestHot\GestHot\bin\EntityFramework.SqlServer.dll
 E:\Documents\school\4eme\.net\projet\implementation\GestHot\GestHot\bin\EntityFramework.xml
 E:\Documents\school\4eme\.net\projet\implementation\GestHot\GestHot\bin\EntityFramework.SqlServer.xml
-E:\Documents\school\4eme\.net\projet\implementation\GestHot\GestHot\bin\Views\User\Favorites.cshtml
