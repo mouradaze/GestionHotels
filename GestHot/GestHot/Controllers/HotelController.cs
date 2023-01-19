@@ -2,21 +2,70 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using GestHot.Models;
+using Newtonsoft.Json.Linq;
 
 namespace GestHot.Controllers
 {
     public class HotelController : Controller
     {
         private GestHotEntities1 db = new GestHotEntities1();
+        private int api(string comment)
+        {
+            var url = "https://localhost:62950/predict";
+
+            var httpRequest = (HttpWebRequest)WebRequest.Create(url);
+            httpRequest.Method = "POST";
+
+            httpRequest.ContentType = "application/json";
+
+            var data = "{\"new_reviews\": \"" + comment + "\",\"score\": 0}";
+            using (var streamWriter = new StreamWriter(httpRequest.GetRequestStream()))
+            {
+                streamWriter.Write(data);
+            }
+
+            var httpResponse = (HttpWebResponse)httpRequest.GetResponse();
+            JObject json;
+            using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+            {
+                var result = streamReader.ReadToEnd();
+                json = JObject.Parse(result);
+
+            }
+            return Convert.ToInt32(json["prediction"]);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult addCmt(string cmt, int idH)
+        {
+            if (Session["userId"] != null)
+            {
+                Comment cmtt = new Comment(int.Parse(Session["userId"].ToString()),idH,cmt);
+                cmtt.prediction = api(cmt);
+                db.Comments.Add(cmtt);
+                db.SaveChanges();
+                return RedirectToAction("Details", "Hotel", new {id = idH});
+            }
+            else
+            {
+                return RedirectToAction("Details", "Hotel", new { id = idH });
+            }
+        }
+
+        
 
         // GET: Hotel
         public ActionResult Index()
         {
+            new OwnerController().hotelNote();
+            
             return View(db.Hotels.ToList());
         }
 
@@ -35,7 +84,9 @@ namespace GestHot.Controllers
             var cmts = db.Comments.Where(x => x.idH == id);
             //List<Comment> cm = (List<Comment>)cmts;
             //if(cmts.Count != 0)
+            TempData["cmtNb"] = cmts.Count();
             TempData["comments"] = cmts;
+            TempData["hots"] = db.Hotels.ToList().Take(4);
             return View(hotel);
         }
 
@@ -128,6 +179,29 @@ namespace GestHot.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+        [HttpPost, ActionName("reservation")]
+        [ValidateAntiForgeryToken]
+        public ActionResult reservation(DateTime dateS, DateTime dateE, int nbrP, int nbrR, int idU, int idH) 
+        {
+            Reservation res = new Reservation(idU,idH,dateS, dateE);
+            db.Reservations.Add(res);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+        public ActionResult Fav(int idU, int idH)
+        {
+            Favorite fav = new Favorite(idU, idH);
+            var pQuery = db.Favorites.FirstOrDefault(e => e.idU.Equals(idU) && e.idH.Equals(idH));
+            if(pQuery != null)
+            {
+                TempData["fav"] = "This hotel is already in your favorites";
+                return RedirectToAction("Index");
+            }
+            db.Favorites.Add(fav);
+            db.SaveChanges();
+            TempData["fav"] = "Hotel added to your favorites";
+            return RedirectToAction("Index");
         }
     }
 }

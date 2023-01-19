@@ -53,6 +53,7 @@
     <Property Name="idH" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Hotel" Relationship="GestHotModel.fk_idH_rev" FromRole="Comment" ToRole="Hotel" />
     <NavigationProperty Name="User" Relationship="GestHotModel.fk_idU_rev" FromRole="Comment" ToRole="User" />
+    <Property Name="prediction" Type="Int32" />
   </EntityType>
   <EntityType Name="Favorite">
     <Key>
@@ -75,10 +76,12 @@
     <Property Name="nbCH" Type="Int32" />
     <Property Name="note" Type="Decimal" Precision="18" Scale="0" />
     <Property Name="idU" Type="Int32" />
+    <Property Name="fileH" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Comments" Relationship="GestHotModel.fk_idH_rev" FromRole="Hotel" ToRole="Comment" />
     <NavigationProperty Name="Favorites" Relationship="GestHotModel.fk_idH_F" FromRole="Hotel" ToRole="Favorite" />
     <NavigationProperty Name="Reservations" Relationship="GestHotModel.fk_idH" FromRole="Hotel" ToRole="Reservation" />
     <NavigationProperty Name="User" Relationship="GestHotModel.FK_idU_H" FromRole="Hotel" ToRole="User" />
+    <Property Name="prix" Type="Double" />
   </EntityType>
   <EntityType Name="Reservation">
     <Key>
@@ -102,6 +105,7 @@
     <Property Name="Email" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="Password" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="Role" Type="Int32" Nullable="false" />
+    <Property Name="fileU" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Comments" Relationship="GestHotModel.fk_idU_rev" FromRole="User" ToRole="Comment" />
     <NavigationProperty Name="Favorites" Relationship="GestHotModel.fk_idU_F" FromRole="User" ToRole="Favorite" />
     <NavigationProperty Name="Hotels" Relationship="GestHotModel.FK_idU_H" FromRole="User" ToRole="Hotel" />

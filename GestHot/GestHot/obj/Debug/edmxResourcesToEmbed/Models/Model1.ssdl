@@ -15,6 +15,7 @@
     <Property Name="message" Type="varchar" MaxLength="500" Nullable="false" />
     <Property Name="idU" Type="int" Nullable="false" />
     <Property Name="idH" Type="int" Nullable="false" />
+    <Property Name="prediction" Type="int" />
   </EntityType>
   <EntityType Name="Favorites">
     <Key>
@@ -35,6 +36,8 @@
     <Property Name="nbCH" Type="int" />
     <Property Name="note" Type="decimal" Precision="18" Scale="0" />
     <Property Name="idU" Type="int" />
+    <Property Name="fileH" Type="varchar" MaxLength="255" />
+    <Property Name="prix" Type="float" />
   </EntityType>
   <EntityType Name="Reservation">
     <Key>
@@ -56,6 +59,7 @@
     <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="Password" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="Role" Type="int" Nullable="false" />
+    <Property Name="fileU" Type="varchar" MaxLength="255" />
   </EntityType>
   <Association Name="fk_idH">
     <End Role="Hotels" Type="Self.Hotels" Multiplicity="1" />

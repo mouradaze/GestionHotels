@@ -1,0 +1,35 @@
+﻿@model IEnumerable<GestHot.Models.Hotel>
+
+@{
+    ViewBag.Title = "search";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    @foreach (var item in Model)
+    {
+        <div class="card my-5">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <img src="@Html.DisplayFor(modelItem => item.fileH)" width="100%" height="280" />
+                    </div>
+                    <div class="col-sm-8">
+
+                        <h2 class="my-2">
+                            <a href="@Url.Action("../Hotel/Details/"+item.idH)" class="no-color">
+                                @Html.DisplayFor(modelItem => item.name)
+                            </a>
+
+                        </h2>
+
+                        <h4>@Html.DisplayFor(modelItem => item.adresse)</h4>
+                        <p>@Html.DisplayFor(modelItem => item.description)</p>
+                        @Html.ActionLink("Reserve now", "Details", new { id = item.idH }, new { @class = "btn btn-red" })
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    }
+</div>

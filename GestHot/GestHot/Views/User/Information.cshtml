@@ -13,10 +13,19 @@
                 <h2 class="text-center text-uppercase text-red">@Html.DisplayFor(model => model.Name) @Html.DisplayFor(model => model.LastName)</h2>
             </div>
             <div class="card-body">
-
-                <h5>E-mail : @Html.DisplayFor(model => model.Email)</h5>
-                <h5>Favorite hotels : @Html.DisplayFor(model => model.Favorites.Count)</h5>
-                <h5>Reviews : @Html.DisplayFor(model => model.Comments.Count)</h5>
+                <div class="row">
+                    <div class="col-sm-5">
+                        <img src="@Html.DisplayFor(model => model.fileU)" class="img-thumbnail" />
+                    </div>
+                    <div class="col-sm-7 my-5">
+                        <h5><strong class="text-red">E-mail :</strong> @Html.DisplayFor(model => model.Email)</h5>
+                        <h5><strong class="text-red">Favorite hotels :</strong> @Html.DisplayFor(model => model.Favorites.Count)</h5>
+                        <h5><strong class="text-red">Reviews :</strong> @Html.DisplayFor(model => model.Comments.Count)</h5>
+                        @Html.ActionLink("Edit my information", "Edit", "User", new { id = Model.idU }, new {@class="btn btn-red"})
+                    </div>
+                </div>
+                
+                
             </div>
         </div>
     </div>

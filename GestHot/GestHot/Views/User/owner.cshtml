@@ -33,13 +33,6 @@
                     @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", placeholder = "Password" } })
                     @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
                 </div>
-                <div class="mb-3">
-                    <input type="password" placeholder="Confirm Password" class="form-control" id="exampleInputPassword1">
-                </div>
-                <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">I've read the privacy policy</label>
-                </div>
                 <div class="text-center">
                     <input type="submit" value="Create" class="btn btn-red" />
                 </div>

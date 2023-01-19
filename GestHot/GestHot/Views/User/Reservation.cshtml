@@ -9,7 +9,7 @@
         <h2 class="text-red">My Reservations</h2>
     </div>
     <div class="row my-3">
-        <table class="table">
+        <table class="table table-striped">
             <tr>
                 <th>
                     <h4>Start Date</h4>
@@ -20,7 +20,7 @@
                 <th>
                     <h4>Hotel Name</h4>
                 </th>
-                
+
             </tr>
 
             @foreach (var item in Model)
@@ -36,6 +36,8 @@
                         @Html.DisplayFor(modelItem => item.Hotel.name)
                     </td>
                     
+                    
+
                 </tr>
             }
 

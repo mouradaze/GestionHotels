@@ -5,16 +5,23 @@
 }
 
 <div class="container">
+    @if (TempData["hotel"] != null)
+    {
+        <div class="alert alert-warning alert-dismissible fade show my-3 text-center" role="alert">
+            <i class="bi bi-exclamation-diamond-fill"></i> @TempData["hotel"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
     <div class="row my-5">
         <div class="col-sm-8">
             <h2 class="text-red">My Hotels</h2>
         </div>
         <div class="col-sm-4">
-            @Html.ActionLink("New Hotel","newHotel",null,new {@class = "btn btn-red"})
+            @Html.ActionLink("New Hotel", "newHotel", null, new { @class = "btn btn-red" })
         </div>
     </div>
     <div class="row my-3">
-        <table class="table">
+        <table class="table table-striped">
             <tr>
                 <th>
                     <h4>Name</h4>
@@ -24,6 +31,9 @@
                 </th>
                 <th>
                     <h4>Rooms</h4>
+                </th>
+                <th>
+                    <h4>Price</h4>
                 </th>
                 <th>
                     <h4>Note</h4>
@@ -40,10 +50,11 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.adresse)
                     </td>
-                    
+
                     <td>
                         @Html.DisplayFor(modelItem => item.nbCH)
                     </td>
+                    <td>@Html.DisplayFor(modelItem => item.prix)</td>
                     <td>
                         @Html.DisplayFor(modelItem => item.note)
                     </td>

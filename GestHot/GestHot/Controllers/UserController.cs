@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using GestHot.Models;
+using Microsoft.Ajax.Utilities;
+using static System.Net.WebRequestMethods;
 
 namespace GestHot.Controllers
 {
@@ -19,6 +22,7 @@ namespace GestHot.Controllers
 
         public ActionResult owner()
         {
+            
             return View();
         }
         // GET: User
@@ -60,22 +64,25 @@ namespace GestHot.Controllers
             }
             return View(user.Reservations);
         }
-        public ActionResult Favorites(int? id)
+
+        public ActionResult Favorites()
         {
-            
-            if (id == null)
+            int id = int.Parse(Session["userId"].ToString());
+            /*if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
+            }*/
             User user = db.Users.Find(id);
             if (user == null)
             {
                 return HttpNotFound();
             }
-            //var hot = user.Favorites.Select(e => e.idH);
-            //var hot = db.Hotels.Include(e => e.idH);
-            //List<Hotel> pQuery = (from h in db.Hotels join ho in user.Favorites on h.idH equals ho.idH select h).ToList();
-            return View(user.Favorites);
+            ICollection<Hotel> fav = new List<Hotel>();
+            foreach(var it in user.Favorites)
+            {
+                fav.Add(db.Hotels.First(e => e.idH == it.idH));
+            }
+            return View(fav);
         }
         public ActionResult Information(int? id)
         {
@@ -94,12 +101,36 @@ namespace GestHot.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult normal(string name, string last, string mail, string pass)
+        public ActionResult normal(string name, string last, string mail, string pass, HttpPostedFileBase fileU)
         {
-            User user = new Models.User(name,last,mail,pass,-1);
-            db.Users.Add(user);
-            db.SaveChanges();
-            return RedirectToAction("Index","Home");
+            User user = new Models.User(name, last, mail, pass, -1);
+            if (db.BlackLists.FirstOrDefault(e => e.emailB.Equals(mail)) != null)
+            {
+                TempData["register"] = "This e-mail is blacklisted";
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                if (db.Users.FirstOrDefault(e => e.Email.Equals(mail)) != null)
+                {
+                    TempData["register"] = "This user already exists";
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    if (fileU != null)
+                    {
+                        string path = Path.Combine(Server.MapPath("~/UploadedFiles"), Path.GetFileName(fileU.FileName));
+                        fileU.SaveAs(path);
+                        user.fileU = "/UploadedFiles/" + fileU.FileName;
+
+                    }
+                    db.Users.Add(user);
+                    db.SaveChanges();
+                    TempData["register"] = "Registered successfully";
+                    return RedirectToAction("Index", "Home");
+                }
+            }
         }
 
         [HttpPost]
@@ -114,11 +145,13 @@ namespace GestHot.Controllers
                 if(pQuery.Role == 0)
                 {
                     Session["userId"] = x.ToString();
+                    Session["own"] = "yes";
                     return RedirectToAction("Index", "Owner", new {id = x});
                 }
                 else if(pQuery.Role == -1)
                 {
                     Session["userId"] = x.ToString();
+                    TempData["register"] = "Logged In";
                     return RedirectToAction("Index","Home");
                 }
                 else
@@ -135,6 +168,8 @@ namespace GestHot.Controllers
         public ActionResult Logout()
         {
             Session["userId"] = null;
+            TempData["register"] = "Logged out";
+            Session["own"] = null;
             return RedirectToAction("Index", "Home");
         }
 
@@ -149,12 +184,30 @@ namespace GestHot.Controllers
             if (ModelState.IsValid)
             {
                 user.Role = 0;
-                db.Users.Add(user);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (db.BlackLists.FirstOrDefault(e => e.emailB.Equals(user.Email)) != null)
+                {
+                    TempData["register"] = "This e-mail is blacklisted";
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    if (db.Users.FirstOrDefault(e => e.Email.Equals(user.Email)) != null)
+                    {
+                        TempData["register"] = "This user already exists";
+                        return RedirectToAction("Index", "Home");
+                    }
+                    else
+                    {
+                        TempData["register"] = "Registered successfully";
+                        db.Users.Add(user);
+                        db.SaveChanges();
+                        return RedirectToAction("Index","Home");
+                    }
+                }
+                
             }
-
-            return View(user);
+            TempData["register"] = "Unable to register";
+            return RedirectToAction("Index", "Home");
         }
 
         // GET: User/Edit/5
@@ -177,13 +230,14 @@ namespace GestHot.Controllers
         // plus de détails, consultez https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "idU,Name,LastName,Email,Password,Role")] User user)
+        public ActionResult Edit([Bind(Include = "idU,Name,LastName,Email,Password,fileU,Role")] User user)
         {
             if (ModelState.IsValid)
             {
+                
                 db.Entry(user).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Information", new { id = user.idU });
             }
             return View(user);
         }

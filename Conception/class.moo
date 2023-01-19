@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?PowerDesigner AppLocale="UTF16" ID="{7FC93CB5-8481-4260-86C5-2FBC50C33D66}" Label="" LastModificationDate="1670589298" Name="ModeleOrienteObjet_1" Objects="20" Symbols="24" Target="Java" TargetLink="Reference" Type="{18112060-1A4B-11D1-83D9-444553540000}" signature="CLD_OBJECT_MODEL" version="15.1.0.2850"?>
+<?PowerDesigner AppLocale="UTF16" ID="{7FC93CB5-8481-4260-86C5-2FBC50C33D66}" Label="" LastModificationDate="1674158622" Name="ModeleOrienteObjet_1" Objects="58" Symbols="40" Target="Java" TargetLink="Reference" Type="{18112060-1A4B-11D1-83D9-444553540000}" signature="CLD_OBJECT_MODEL" version="15.1.0.2850"?>
 <!-- Veuillez ne pas modifier ce fichier -->
 
 <Model xmlns:a="attribute" xmlns:c="collection" xmlns:o="object">
@@ -12,7 +12,7 @@
 <a:Code>ModeleOrienteObjet_1</a:Code>
 <a:CreationDate>1670588478</a:CreationDate>
 <a:Creator>PC</a:Creator>
-<a:ModificationDate>1670588765</a:ModificationDate>
+<a:ModificationDate>1674158143</a:ModificationDate>
 <a:Modifier>PC</a:Modifier>
 <a:PackageOptionsText>[FolderOptions]
 
@@ -982,7 +982,7 @@ NameToCode=No</a:ModelOptionsText>
 <a:Code>DiagrammeClasses_1</a:Code>
 <a:CreationDate>1670588478</a:CreationDate>
 <a:Creator>PC</a:Creator>
-<a:ModificationDate>1670589252</a:ModificationDate>
+<a:ModificationDate>1674158229</a:ModificationDate>
 <a:Modifier>PC</a:Modifier>
 <a:DisplayPreferences>[DisplayPreferences]
 
@@ -1395,197 +1395,168 @@ Shadow=0</a:DisplayPreferences>
 <a:PaperSource>15</a:PaperSource>
 <c:Symbols>
 <o:PolylineSymbol Id="o6">
-<a:CreationDate>1670589124</a:CreationDate>
-<a:ModificationDate>1670589148</a:ModificationDate>
-<a:Rect>((-16350,9225), (-11850,9375))</a:Rect>
-<a:ListOfPoints>((-16350,9225),(-16350,9375),(-11850,9375))</a:ListOfPoints>
+<a:CreationDate>1674158148</a:CreationDate>
+<a:ModificationDate>1674158148</a:ModificationDate>
+<a:Rect>((-11775,18975), (4350,19200))</a:Rect>
+<a:ListOfPoints>((-11775,19200),(-11775,18975),(4350,18975))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
 <a:TextStyle>4130</a:TextStyle>
 <a:ArrowStyle>0</a:ArrowStyle>
 <a:LineColor>16512</a:LineColor>
-<a:DashStyle>3</a:DashStyle>
 <a:ShadowColor>12632256</a:ShadowColor>
 <a:FontName>Arial,8,N</a:FontName>
 </o:PolylineSymbol>
 <o:PolylineSymbol Id="o7">
-<a:CreationDate>1670589181</a:CreationDate>
-<a:ModificationDate>1670589210</a:ModificationDate>
-<a:Rect>((-30300,-3525), (-4500,26475))</a:Rect>
-<a:ListOfPoints>((-4500,-3525),(-30300,8175),(-6150,26475))</a:ListOfPoints>
+<a:CreationDate>1674158163</a:CreationDate>
+<a:ModificationDate>1674158617</a:ModificationDate>
+<a:Rect>((-11175,10500), (19800,25425))</a:Rect>
+<a:ListOfPoints>((-11175,25275),(19800,25425),(8400,10500))</a:ListOfPoints>
 <a:TextStyle>4130</a:TextStyle>
 <a:ArrowStyle>0</a:ArrowStyle>
 <a:LineColor>16512</a:LineColor>
 <a:ShadowColor>12632256</a:ShadowColor>
 <a:FontName>Arial,8,N</a:FontName>
 </o:PolylineSymbol>
-<o:PolylineSymbol Id="o8">
-<a:CreationDate>1670589219</a:CreationDate>
-<a:ModificationDate>1670589239</a:ModificationDate>
-<a:Rect>((-36300,14325), (-21900,27375))</a:Rect>
-<a:ListOfPoints>((-36300,27375),(-28200,20025),(-21900,14325))</a:ListOfPoints>
+<o:TextSymbol Id="o8">
+<a:Text>1
+</a:Text>
+<a:CreationDate>1674158224</a:CreationDate>
+<a:ModificationDate>1674158622</a:ModificationDate>
+<a:Rect>((-12074,22801), (-7275,26400))</a:Rect>
 <a:TextStyle>4130</a:TextStyle>
-<a:ArrowStyle>0</a:ArrowStyle>
-<a:LineColor>16512</a:LineColor>
-<a:DashStyle>3</a:DashStyle>
+<a:LineColor>0</a:LineColor>
+<a:DashStyle>7</a:DashStyle>
+<a:FillColor>0</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
 <a:FontName>Arial,8,N</a:FontName>
-</o:PolylineSymbol>
-<o:PolylineSymbol Id="o9">
-<a:CreationDate>1670589252</a:CreationDate>
-<a:ModificationDate>1670589265</a:ModificationDate>
-<a:Rect>((-41850,15375), (-37050,16575))</a:Rect>
-<a:ListOfPoints>((-37050,15375),(-37050,16575),(-41850,16575))</a:ListOfPoints>
+</o:TextSymbol>
+<o:TextSymbol Id="o9">
+<a:Text>*</a:Text>
+<a:CreationDate>1674158226</a:CreationDate>
+<a:ModificationDate>1674158311</a:ModificationDate>
+<a:Rect>((7052,8550), (12150,12225))</a:Rect>
+<a:TextStyle>4130</a:TextStyle>
+<a:AutoAdjustToText>0</a:AutoAdjustToText>
+<a:LineColor>0</a:LineColor>
+<a:DashStyle>7</a:DashStyle>
+<a:FillColor>0</a:FillColor>
+<a:ShadowColor>12632256</a:ShadowColor>
+<a:FontName>Arial,8,N</a:FontName>
+<a:ManuallyResized>1</a:ManuallyResized>
+</o:TextSymbol>
+<o:TextSymbol Id="o10">
+<a:Text>*
+
+</a:Text>
+<a:CreationDate>1674158227</a:CreationDate>
+<a:ModificationDate>1674158281</a:ModificationDate>
+<a:Rect>((1,15976), (4800,19575))</a:Rect>
+<a:TextStyle>4130</a:TextStyle>
+<a:LineColor>0</a:LineColor>
+<a:DashStyle>7</a:DashStyle>
+<a:FillColor>0</a:FillColor>
+<a:ShadowColor>12632256</a:ShadowColor>
+<a:FontName>Arial,8,N</a:FontName>
+</o:TextSymbol>
+<o:TextSymbol Id="o11">
+<a:Text>1</a:Text>
+<a:CreationDate>1674158229</a:CreationDate>
+<a:ModificationDate>1674158254</a:ModificationDate>
+<a:Rect>((-12824,15976), (-8025,19575))</a:Rect>
+<a:TextStyle>4130</a:TextStyle>
+<a:LineColor>0</a:LineColor>
+<a:DashStyle>7</a:DashStyle>
+<a:FillColor>0</a:FillColor>
+<a:ShadowColor>12632256</a:ShadowColor>
+<a:FontName>Arial,8,N</a:FontName>
+</o:TextSymbol>
+<o:AssociationSymbol Id="o12">
+<a:CreationDate>1674157956</a:CreationDate>
+<a:ModificationDate>1674157956</a:ModificationDate>
+<a:Rect>((-11355,-592), (3403,2120))</a:Rect>
+<a:ListOfPoints>((-11355,-592),(-4097,-592),(-4097,2120),(3403,2120))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
-<a:TextStyle>4130</a:TextStyle>
-<a:ArrowStyle>0</a:ArrowStyle>
-<a:LineColor>16512</a:LineColor>
-<a:DashStyle>3</a:DashStyle>
-<a:ShadowColor>12632256</a:ShadowColor>
-<a:FontName>Arial,8,N</a:FontName>
-</o:PolylineSymbol>
-<o:AssociationSymbol Id="o10">
-<a:CreationDate>1670588765</a:CreationDate>
-<a:ModificationDate>1670588795</a:ModificationDate>
-<a:Rect>((-20250,9375), (-5400,26325))</a:Rect>
-<a:ListOfPoints>((-5400,26325),(-15150,15375),(-20250,9375))</a:ListOfPoints>
-<a:ArrowStyle>3592</a:ArrowStyle>
+<a:ArrowStyle>8</a:ArrowStyle>
 <a:LineColor>4194432</a:LineColor>
 <a:ShadowColor>12632256</a:ShadowColor>
 <a:FontList>DISPNAME 0 Arial,8,N
 MULA 0 Arial,8,N</a:FontList>
 <c:SourceSymbol>
-<o:ClassSymbol Ref="o11"/>
+<o:ClassSymbol Ref="o13"/>
 </c:SourceSymbol>
 <c:DestinationSymbol>
-<o:ClassSymbol Ref="o12"/>
+<o:ClassSymbol Ref="o14"/>
 </c:DestinationSymbol>
 <c:Object>
-<o:Association Ref="o13"/>
+<o:Association Ref="o15"/>
 </c:Object>
 </o:AssociationSymbol>
-<o:PolylineSymbol Id="o14">
-<a:CreationDate>1670588661</a:CreationDate>
-<a:ModificationDate>1670588683</a:ModificationDate>
-<a:Rect>((-37200,10425), (-22200,26925))</a:Rect>
-<a:ListOfPoints>((-37200,26925),(-37200,10425),(-22200,10425))</a:ListOfPoints>
-<a:CornerStyle>2</a:CornerStyle>
-<a:TextStyle>4130</a:TextStyle>
-<a:ArrowStyle>0</a:ArrowStyle>
-<a:LineColor>16512</a:LineColor>
-<a:ShadowColor>12632256</a:ShadowColor>
-<a:FontName>Arial,8,N</a:FontName>
-</o:PolylineSymbol>
-<o:PolylineSymbol Id="o15">
-<a:CreationDate>1670588730</a:CreationDate>
-<a:ModificationDate>1670588806</a:ModificationDate>
-<a:Rect>((-8250,10725), (-3750,27225))</a:Rect>
-<a:ListOfPoints>((-8250,10725),(-3750,10725),(-3750,27225))</a:ListOfPoints>
-<a:CornerStyle>2</a:CornerStyle>
-<a:TextStyle>4130</a:TextStyle>
-<a:ArrowStyle>0</a:ArrowStyle>
-<a:LineColor>16512</a:LineColor>
-<a:ShadowColor>12632256</a:ShadowColor>
-<a:FontName>Arial,8,N</a:FontName>
-</o:PolylineSymbol>
-<o:PolylineSymbol Id="o16">
-<a:CreationDate>1670588732</a:CreationDate>
-<a:ModificationDate>1670588732</a:ModificationDate>
-<a:Rect>((-2700,10425), (9150,26325))</a:Rect>
-<a:ListOfPoints>((9150,10425),(-2700,10425),(-2700,26325))</a:ListOfPoints>
-<a:CornerStyle>2</a:CornerStyle>
-<a:TextStyle>4130</a:TextStyle>
-<a:ArrowStyle>0</a:ArrowStyle>
-<a:LineColor>16512</a:LineColor>
-<a:ShadowColor>12632256</a:ShadowColor>
-<a:FontName>Arial,8,N</a:FontName>
-</o:PolylineSymbol>
-<o:PolylineSymbol Id="o17">
-<a:CreationDate>1670588741</a:CreationDate>
-<a:ModificationDate>1670589131</a:ModificationDate>
-<a:Rect>((-18300,-1575), (-3750,26775))</a:Rect>
-<a:ListOfPoints>((-6450,-1575),(-18300,6075),(-3750,26775))</a:ListOfPoints>
-<a:TextStyle>4130</a:TextStyle>
-<a:ArrowStyle>0</a:ArrowStyle>
-<a:LineColor>16512</a:LineColor>
-<a:ShadowColor>12632256</a:ShadowColor>
-<a:FontName>Arial,8,N</a:FontName>
-</o:PolylineSymbol>
-<o:PolylineSymbol Id="o18">
-<a:CreationDate>1670588744</a:CreationDate>
-<a:ModificationDate>1670588744</a:ModificationDate>
-<a:Rect>((-2700,13275), (30300,25875))</a:Rect>
-<a:ListOfPoints>((30300,13275),(30300,25875),(-2700,25875))</a:ListOfPoints>
-<a:CornerStyle>2</a:CornerStyle>
-<a:TextStyle>4130</a:TextStyle>
-<a:ArrowStyle>0</a:ArrowStyle>
-<a:LineColor>16512</a:LineColor>
-<a:ShadowColor>12632256</a:ShadowColor>
-<a:FontName>Arial,8,N</a:FontName>
-</o:PolylineSymbol>
-<o:GeneralizationSymbol Id="o19">
-<a:CreationDate>1670588544</a:CreationDate>
-<a:ModificationDate>1670588833</a:ModificationDate>
-<a:Rect>((31200,14025), (38833,24525))</a:Rect>
-<a:ListOfPoints>((31200,14025),(38833,14025),(38833,24525))</a:ListOfPoints>
-<a:CornerStyle>2</a:CornerStyle>
-<a:ArrowStyle>7</a:ArrowStyle>
+<o:AssociationSymbol Id="o16">
+<a:CreationDate>1674157983</a:CreationDate>
+<a:ModificationDate>1674158109</a:ModificationDate>
+<a:Rect>((-12738,4131), (3321,16700))</a:Rect>
+<a:ListOfPoints>((-12738,4131),(-3075,10875),(3321,16700))</a:ListOfPoints>
+<a:ArrowStyle>8</a:ArrowStyle>
 <a:LineColor>4194432</a:LineColor>
 <a:ShadowColor>12632256</a:ShadowColor>
-<a:FontList>DISPNAME 0 Arial,8,N</a:FontList>
+<a:FontList>DISPNAME 0 Arial,8,N
+MULA 0 Arial,8,N</a:FontList>
 <c:SourceSymbol>
+<o:ClassSymbol Ref="o13"/>
+</c:SourceSymbol>
+<c:DestinationSymbol>
+<o:ClassSymbol Ref="o17"/>
+</c:DestinationSymbol>
+<c:Object>
+<o:Association Ref="o18"/>
+</c:Object>
+</o:AssociationSymbol>
+<o:AssociationSymbol Id="o19">
+<a:CreationDate>1674157996</a:CreationDate>
+<a:ModificationDate>1674158182</a:ModificationDate>
+<a:Rect>((-12185,2995), (7152,9597))</a:Rect>
+<a:ListOfPoints>((-12185,2995),(-5475,5550),(7152,9597))</a:ListOfPoints>
+<a:ArrowStyle>8</a:ArrowStyle>
+<a:LineColor>4194432</a:LineColor>
+<a:ShadowColor>12632256</a:ShadowColor>
+<a:FontList>DISPNAME 0 Arial,8,N
+MULA 0 Arial,8,N</a:FontList>
+<c:SourceSymbol>
+<o:ClassSymbol Ref="o13"/>
+</c:SourceSymbol>
+<c:DestinationSymbol>
 <o:ClassSymbol Ref="o20"/>
-</c:SourceSymbol>
-<c:DestinationSymbol>
-<o:ClassSymbol Ref="o21"/>
 </c:DestinationSymbol>
 <c:Object>
-<o:Generalization Ref="o22"/>
+<o:Association Ref="o21"/>
 </c:Object>
-</o:GeneralizationSymbol>
-<o:GeneralizationSymbol Id="o23">
-<a:CreationDate>1670588547</a:CreationDate>
-<a:ModificationDate>1670589088</a:ModificationDate>
-<a:Rect>((-4275,-2925), (40837,24975))</a:Rect>
-<a:ListOfPoints>((-4275,-2025),(30150,-2925),(40837,16274),(40837,24975))</a:ListOfPoints>
-<a:ArrowStyle>7</a:ArrowStyle>
-<a:LineColor>4194432</a:LineColor>
-<a:ShadowColor>12632256</a:ShadowColor>
-<a:FontList>DISPNAME 0 Arial,8,N</a:FontList>
-<c:SourceSymbol>
-<o:ClassSymbol Ref="o24"/>
-</c:SourceSymbol>
-<c:DestinationSymbol>
-<o:ClassSymbol Ref="o21"/>
-</c:DestinationSymbol>
-<c:Object>
-<o:Generalization Ref="o25"/>
-</c:Object>
-</o:GeneralizationSymbol>
-<o:GeneralizationSymbol Id="o26">
-<a:CreationDate>1670588550</a:CreationDate>
-<a:ModificationDate>1670588843</a:ModificationDate>
-<a:Rect>((41153,14175), (51450,25425))</a:Rect>
-<a:ListOfPoints>((51450,14175),(51450,25425),(41153,25425))</a:ListOfPoints>
+</o:AssociationSymbol>
+<o:AssociationSymbol Id="o22">
+<a:CreationDate>1674158014</a:CreationDate>
+<a:ModificationDate>1674158413</a:ModificationDate>
+<a:Rect>((-18875,4131), (-16097,20946))</a:Rect>
+<a:ListOfPoints>((-17374,4131),(-16959,13273),(-17971,13273),(-17971,20946))</a:ListOfPoints>
 <a:CornerStyle>2</a:CornerStyle>
-<a:ArrowStyle>7</a:ArrowStyle>
+<a:ArrowStyle>8</a:ArrowStyle>
 <a:LineColor>4194432</a:LineColor>
 <a:ShadowColor>12632256</a:ShadowColor>
-<a:FontList>DISPNAME 0 Arial,8,N</a:FontList>
+<a:FontList>DISPNAME 0 Arial,8,N
+MULA 0 Arial,8,N</a:FontList>
 <c:SourceSymbol>
-<o:ClassSymbol Ref="o27"/>
+<o:ClassSymbol Ref="o13"/>
 </c:SourceSymbol>
 <c:DestinationSymbol>
-<o:ClassSymbol Ref="o21"/>
+<o:ClassSymbol Ref="o23"/>
 </c:DestinationSymbol>
 <c:Object>
-<o:Generalization Ref="o28"/>
+<o:Association Ref="o24"/>
 </c:Object>
-</o:GeneralizationSymbol>
-<o:ClassSymbol Id="o11">
+</o:AssociationSymbol>
+<o:ClassSymbol Id="o13">
 <a:CreationDate>1670588495</a:CreationDate>
-<a:ModificationDate>1670588495</a:ModificationDate>
+<a:ModificationDate>1674157935</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((-6599,24864), (-1800,28685))</a:Rect>
+<a:Rect>((-18827,-2357), (-9971,9255))</a:Rect>
 <a:LineColor>128</a:LineColor>
 <a:FillColor>8637161</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
@@ -1601,14 +1572,108 @@ LABL 0 Arial,8,N</a:FontList>
 <a:GradientFillMode>65</a:GradientFillMode>
 <a:GradientEndColor>16777215</a:GradientEndColor>
 <c:Object>
-<o:Class Ref="o29"/>
+<o:Class Ref="o25"/>
 </c:Object>
 </o:ClassSymbol>
-<o:ClassSymbol Id="o30">
+<o:ClassSymbol Id="o14">
 <a:CreationDate>1670588499</a:CreationDate>
-<a:ModificationDate>1670588499</a:ModificationDate>
+<a:ModificationDate>1674157932</a:ModificationDate>
 <a:IconMode>-1</a:IconMode>
-<a:Rect>((-40649,26214), (-35850,30035))</a:Rect>
+<a:Rect>((2394,-2134), (8856,5582))</a:Rect>
+<a:LineColor>128</a:LineColor>
+<a:FillColor>8637161</a:FillColor>
+<a:ShadowColor>12632256</a:ShadowColor>
+<a:FontList>STRN 0 Arial,8,N
+DISPNAME 0 Arial,8,N
+CNTR 0 Arial,8,N
+Attributes 0 Arial,8,N
+ClassPrimaryAttribute 0 Arial,8,U
+Operations 0 Arial,8,N
+InnerClassifiers 0 Arial,8,N
+LABL 0 Arial,8,N</a:FontList>
+<a:BrushStyle>6</a:BrushStyle>
+<a:GradientFillMode>65</a:GradientFillMode>
+<a:GradientEndColor>16777215</a:GradientEndColor>
+<c:Object>
+<o:Class Ref="o26"/>
+</c:Object>
+</o:ClassSymbol>
+<o:ClassSymbol Id="o23">
+<a:CreationDate>1670588505</a:CreationDate>
+<a:ModificationDate>1674158413</a:ModificationDate>
+<a:IconMode>-1</a:IconMode>
+<a:Rect>((-20775,17291), (-11249,26850))</a:Rect>
+<a:AutoAdjustToText>0</a:AutoAdjustToText>
+<a:LineColor>128</a:LineColor>
+<a:FillColor>8637161</a:FillColor>
+<a:ShadowColor>12632256</a:ShadowColor>
+<a:FontList>STRN 0 Arial,8,N
+DISPNAME 0 Arial,8,N
+CNTR 0 Arial,8,N
+Attributes 0 Arial,8,N
+ClassPrimaryAttribute 0 Arial,8,U
+Operations 0 Arial,8,N
+InnerClassifiers 0 Arial,8,N
+LABL 0 Arial,8,N</a:FontList>
+<a:BrushStyle>6</a:BrushStyle>
+<a:GradientFillMode>65</a:GradientFillMode>
+<a:GradientEndColor>16777215</a:GradientEndColor>
+<a:ManuallyResized>1</a:ManuallyResized>
+<c:Object>
+<o:Class Ref="o27"/>
+</c:Object>
+</o:ClassSymbol>
+<o:ClassSymbol Id="o17">
+<a:CreationDate>1670588519</a:CreationDate>
+<a:ModificationDate>1674157901</a:ModificationDate>
+<a:IconMode>-1</a:IconMode>
+<a:Rect>((2251,15416), (10797,23132))</a:Rect>
+<a:LineColor>128</a:LineColor>
+<a:FillColor>8637161</a:FillColor>
+<a:ShadowColor>12632256</a:ShadowColor>
+<a:FontList>STRN 0 Arial,8,N
+DISPNAME 0 Arial,8,N
+CNTR 0 Arial,8,N
+Attributes 0 Arial,8,N
+ClassPrimaryAttribute 0 Arial,8,U
+Operations 0 Arial,8,N
+InnerClassifiers 0 Arial,8,N
+LABL 0 Arial,8,N</a:FontList>
+<a:BrushStyle>6</a:BrushStyle>
+<a:GradientFillMode>65</a:GradientFillMode>
+<a:GradientEndColor>16777215</a:GradientEndColor>
+<c:Object>
+<o:Class Ref="o28"/>
+</c:Object>
+</o:ClassSymbol>
+<o:ClassSymbol Id="o29">
+<a:CreationDate>1674157883</a:CreationDate>
+<a:ModificationDate>1674157943</a:ModificationDate>
+<a:IconMode>-1</a:IconMode>
+<a:Rect>((-7776,26629), (-774,31423))</a:Rect>
+<a:LineColor>128</a:LineColor>
+<a:FillColor>8637161</a:FillColor>
+<a:ShadowColor>12632256</a:ShadowColor>
+<a:FontList>STRN 0 Arial,8,N
+DISPNAME 0 Arial,8,N
+CNTR 0 Arial,8,N
+Attributes 0 Arial,8,N
+ClassPrimaryAttribute 0 Arial,8,U
+Operations 0 Arial,8,N
+InnerClassifiers 0 Arial,8,N
+LABL 0 Arial,8,N</a:FontList>
+<a:BrushStyle>6</a:BrushStyle>
+<a:GradientFillMode>65</a:GradientFillMode>
+<a:GradientEndColor>16777215</a:GradientEndColor>
+<c:Object>
+<o:Class Ref="o30"/>
+</c:Object>
+</o:ClassSymbol>
+<o:ClassSymbol Id="o20">
+<a:CreationDate>1674157917</a:CreationDate>
+<a:ModificationDate>1674158182</a:ModificationDate>
+<a:IconMode>-1</a:IconMode>
+<a:Rect>((3541,7165), (8457,12933))</a:Rect>
 <a:LineColor>128</a:LineColor>
 <a:FillColor>8637161</a:FillColor>
 <a:ShadowColor>12632256</a:ShadowColor>
@@ -1627,192 +1692,6 @@ LABL 0 Arial,8,N</a:FontList>
 <o:Class Ref="o31"/>
 </c:Object>
 </o:ClassSymbol>
-<o:ClassSymbol Id="o12">
-<a:CreationDate>1670588500</a:CreationDate>
-<a:ModificationDate>1670588602</a:ModificationDate>
-<a:IconMode>-1</a:IconMode>
-<a:Rect>((-23399,7914), (-18600,11735))</a:Rect>
-<a:LineColor>128</a:LineColor>
-<a:FillColor>8637161</a:FillColor>
-<a:ShadowColor>12632256</a:ShadowColor>
-<a:FontList>STRN 0 Arial,8,N
-DISPNAME 0 Arial,8,N
-CNTR 0 Arial,8,N
-Attributes 0 Arial,8,N
-ClassPrimaryAttribute 0 Arial,8,U
-Operations 0 Arial,8,N
-InnerClassifiers 0 Arial,8,N
-LABL 0 Arial,8,N</a:FontList>
-<a:BrushStyle>6</a:BrushStyle>
-<a:GradientFillMode>65</a:GradientFillMode>
-<a:GradientEndColor>16777215</a:GradientEndColor>
-<c:Object>
-<o:Class Ref="o32"/>
-</c:Object>
-</o:ClassSymbol>
-<o:ClassSymbol Id="o21">
-<a:CreationDate>1670588505</a:CreationDate>
-<a:ModificationDate>1670588833</a:ModificationDate>
-<a:IconMode>-1</a:IconMode>
-<a:Rect>((36301,23964), (43051,27785))</a:Rect>
-<a:AutoAdjustToText>0</a:AutoAdjustToText>
-<a:LineColor>128</a:LineColor>
-<a:FillColor>8637161</a:FillColor>
-<a:ShadowColor>12632256</a:ShadowColor>
-<a:FontList>STRN 0 Arial,8,N
-DISPNAME 0 Arial,8,N
-CNTR 0 Arial,8,N
-Attributes 0 Arial,8,N
-ClassPrimaryAttribute 0 Arial,8,U
-Operations 0 Arial,8,N
-InnerClassifiers 0 Arial,8,N
-LABL 0 Arial,8,N</a:FontList>
-<a:BrushStyle>6</a:BrushStyle>
-<a:GradientFillMode>65</a:GradientFillMode>
-<a:GradientEndColor>16777215</a:GradientEndColor>
-<a:ManuallyResized>1</a:ManuallyResized>
-<c:Object>
-<o:Class Ref="o33"/>
-</c:Object>
-</o:ClassSymbol>
-<o:ClassSymbol Id="o20">
-<a:CreationDate>1670588508</a:CreationDate>
-<a:ModificationDate>1670588508</a:ModificationDate>
-<a:IconMode>-1</a:IconMode>
-<a:Rect>((28350,12114), (33149,15935))</a:Rect>
-<a:LineColor>128</a:LineColor>
-<a:FillColor>8637161</a:FillColor>
-<a:ShadowColor>12632256</a:ShadowColor>
-<a:FontList>STRN 0 Arial,8,N
-DISPNAME 0 Arial,8,N
-CNTR 0 Arial,8,N
-Attributes 0 Arial,8,N
-ClassPrimaryAttribute 0 Arial,8,U
-Operations 0 Arial,8,N
-InnerClassifiers 0 Arial,8,N
-LABL 0 Arial,8,N</a:FontList>
-<a:BrushStyle>6</a:BrushStyle>
-<a:GradientFillMode>65</a:GradientFillMode>
-<a:GradientEndColor>16777215</a:GradientEndColor>
-<c:Object>
-<o:Class Ref="o34"/>
-</c:Object>
-</o:ClassSymbol>
-<o:ClassSymbol Id="o24">
-<a:CreationDate>1670588510</a:CreationDate>
-<a:ModificationDate>1670589075</a:ModificationDate>
-<a:IconMode>-1</a:IconMode>
-<a:Rect>((-6750,-3786), (-1951,35))</a:Rect>
-<a:LineColor>128</a:LineColor>
-<a:FillColor>8637161</a:FillColor>
-<a:ShadowColor>12632256</a:ShadowColor>
-<a:FontList>STRN 0 Arial,8,N
-DISPNAME 0 Arial,8,N
-CNTR 0 Arial,8,N
-Attributes 0 Arial,8,N
-ClassPrimaryAttribute 0 Arial,8,U
-Operations 0 Arial,8,N
-InnerClassifiers 0 Arial,8,N
-LABL 0 Arial,8,N</a:FontList>
-<a:BrushStyle>6</a:BrushStyle>
-<a:GradientFillMode>65</a:GradientFillMode>
-<a:GradientEndColor>16777215</a:GradientEndColor>
-<c:Object>
-<o:Class Ref="o35"/>
-</c:Object>
-</o:ClassSymbol>
-<o:ClassSymbol Id="o27">
-<a:CreationDate>1670588511</a:CreationDate>
-<a:ModificationDate>1670588557</a:ModificationDate>
-<a:IconMode>-1</a:IconMode>
-<a:Rect>((48900,11514), (53699,15335))</a:Rect>
-<a:LineColor>128</a:LineColor>
-<a:FillColor>8637161</a:FillColor>
-<a:ShadowColor>12632256</a:ShadowColor>
-<a:FontList>STRN 0 Arial,8,N
-DISPNAME 0 Arial,8,N
-CNTR 0 Arial,8,N
-Attributes 0 Arial,8,N
-ClassPrimaryAttribute 0 Arial,8,U
-Operations 0 Arial,8,N
-InnerClassifiers 0 Arial,8,N
-LABL 0 Arial,8,N</a:FontList>
-<a:BrushStyle>6</a:BrushStyle>
-<a:GradientFillMode>65</a:GradientFillMode>
-<a:GradientEndColor>16777215</a:GradientEndColor>
-<c:Object>
-<o:Class Ref="o36"/>
-</c:Object>
-</o:ClassSymbol>
-<o:ClassSymbol Id="o37">
-<a:CreationDate>1670588519</a:CreationDate>
-<a:ModificationDate>1670588802</a:ModificationDate>
-<a:IconMode>-1</a:IconMode>
-<a:Rect>((-12600,7464), (-7202,11285))</a:Rect>
-<a:LineColor>128</a:LineColor>
-<a:FillColor>8637161</a:FillColor>
-<a:ShadowColor>12632256</a:ShadowColor>
-<a:FontList>STRN 0 Arial,8,N
-DISPNAME 0 Arial,8,N
-CNTR 0 Arial,8,N
-Attributes 0 Arial,8,N
-ClassPrimaryAttribute 0 Arial,8,U
-Operations 0 Arial,8,N
-InnerClassifiers 0 Arial,8,N
-LABL 0 Arial,8,N</a:FontList>
-<a:BrushStyle>6</a:BrushStyle>
-<a:GradientFillMode>65</a:GradientFillMode>
-<a:GradientEndColor>16777215</a:GradientEndColor>
-<c:Object>
-<o:Class Ref="o38"/>
-</c:Object>
-</o:ClassSymbol>
-<o:ClassSymbol Id="o39">
-<a:CreationDate>1670588614</a:CreationDate>
-<a:ModificationDate>1670588614</a:ModificationDate>
-<a:IconMode>-1</a:IconMode>
-<a:Rect>((6000,7464), (10799,11285))</a:Rect>
-<a:LineColor>128</a:LineColor>
-<a:FillColor>8637161</a:FillColor>
-<a:ShadowColor>12632256</a:ShadowColor>
-<a:FontList>STRN 0 Arial,8,N
-DISPNAME 0 Arial,8,N
-CNTR 0 Arial,8,N
-Attributes 0 Arial,8,N
-ClassPrimaryAttribute 0 Arial,8,U
-Operations 0 Arial,8,N
-InnerClassifiers 0 Arial,8,N
-LABL 0 Arial,8,N</a:FontList>
-<a:BrushStyle>6</a:BrushStyle>
-<a:GradientFillMode>65</a:GradientFillMode>
-<a:GradientEndColor>16777215</a:GradientEndColor>
-<c:Object>
-<o:Class Ref="o40"/>
-</c:Object>
-</o:ClassSymbol>
-<o:ClassSymbol Id="o41">
-<a:CreationDate>1670588668</a:CreationDate>
-<a:ModificationDate>1670589246</a:ModificationDate>
-<a:IconMode>-1</a:IconMode>
-<a:Rect>((-48225,15114), (-41177,18935))</a:Rect>
-<a:LineColor>128</a:LineColor>
-<a:FillColor>8637161</a:FillColor>
-<a:ShadowColor>12632256</a:ShadowColor>
-<a:FontList>STRN 0 Arial,8,N
-DISPNAME 0 Arial,8,N
-CNTR 0 Arial,8,N
-Attributes 0 Arial,8,N
-ClassPrimaryAttribute 0 Arial,8,U
-Operations 0 Arial,8,N
-InnerClassifiers 0 Arial,8,N
-LABL 0 Arial,8,N</a:FontList>
-<a:BrushStyle>6</a:BrushStyle>
-<a:GradientFillMode>65</a:GradientFillMode>
-<a:GradientEndColor>16777215</a:GradientEndColor>
-<c:Object>
-<o:Class Ref="o42"/>
-</c:Object>
-</o:ClassSymbol>
 </c:Symbols>
 </o:ClassDiagram>
 </c:ClassDiagrams>
@@ -1820,117 +1699,429 @@ LABL 0 Arial,8,N</a:FontList>
 <o:ClassDiagram Ref="o5"/>
 </c:DefaultDiagram>
 <c:Classes>
-<o:Class Id="o29">
+<o:Class Id="o25">
 <a:ObjectID>9B6B854D-F6A1-4C8A-BFE3-2134BE2F7B5D</a:ObjectID>
 <a:Name>Hotel</a:Name>
 <a:Code>Hotel</a:Code>
 <a:CreationDate>1670588495</a:CreationDate>
 <a:Creator>PC</a:Creator>
-<a:ModificationDate>1670588581</a:ModificationDate>
+<a:ModificationDate>1674158591</a:ModificationDate>
 <a:Modifier>PC</a:Modifier>
 <a:UseParentNamespace>0</a:UseParentNamespace>
+<c:Attributes>
+<o:Attribute Id="o32">
+<a:ObjectID>B3DFC169-34BA-4E3C-AF5A-1C3A1DF2F2A7</a:ObjectID>
+<a:Name>idH</a:Name>
+<a:Code>idH</a:Code>
+<a:CreationDate>1674158519</a:CreationDate>
+<a:Creator>PC</a:Creator>
+<a:ModificationDate>1674158591</a:ModificationDate>
+<a:Modifier>PC</a:Modifier>
+<a:DataType>int</a:DataType>
+<a:Attribute.Visibility>-</a:Attribute.Visibility>
+</o:Attribute>
+<o:Attribute Id="o33">
+<a:ObjectID>EDA468E8-3570-40DF-B5F6-56A02D1295DE</a:ObjectID>
+<a:Name>name</a:Name>
+<a:Code>name</a:Code>
+<a:CreationDate>1674158519</a:CreationDate>
+<a:Creator>PC</a:Creator>
+<a:ModificationDate>1674158591</a:ModificationDate>
+<a:Modifier>PC</a:Modifier>
+<a:DataType>String</a:DataType>
+<a:Attribute.Visibility>-</a:Attribute.Visibility>
+</o:Attribute>
+<o:Attribute Id="o34">
+<a:ObjectID>A55A937C-B42C-47CC-AA95-B848CF56F887</a:ObjectID>
+<a:Name>adresse</a:Name>
+<a:Code>adresse</a:Code>
+<a:CreationDate>1674158519</a:CreationDate>
+<a:Creator>PC</a:Creator>
+<a:ModificationDate>1674158591</a:ModificationDate>
+<a:Modifier>PC</a:Modifier>
+<a:DataType>String</a:DataType>
+<a:Attribute.Visibility>-</a:Attribute.Visibility>
+</o:Attribute>
+<o:Attribute Id="o35">
+<a:ObjectID>D30B629E-316D-41E5-84A9-081FA120717F</a:ObjectID>
+<a:Name>description</a:Name>
+<a:Code>description</a:Code>
+<a:CreationDate>1674158519</a:CreationDate>
+<a:Creator>PC</a:Creator>
+<a:ModificationDate>1674158591</a:ModificationDate>
+<a:Modifier>PC</a:Modifier>
+<a:DataType>String</a:DataType>
+<a:Attribute.Visibility>-</a:Attribute.Visibility>
+</o:Attribute>
+<o:Attribute Id="o36">
+<a:ObjectID>C0BC8415-6142-48DE-A6BE-62FC1A4C13A1</a:ObjectID>
+<a:Name>nbCH</a:Name>
+<a:Code>nbCH</a:Code>
+<a:CreationDate>1674158519</a:CreationDate>
+<a:Creator>PC</a:Creator>
+<a:ModificationDate>1674158591</a:ModificationDate>
+<a:Modifier>PC</a:Modifier>
+<a:DataType>int</a:DataType>
+<a:Attribute.Visibility>-</a:Attribute.Visibility>
+</o:Attribute>
+<o:Attribute Id="o37">
+<a:ObjectID>BB8FD655-3FCA-4360-899F-097F18E2C86B</a:ObjectID>
+<a:Name>note</a:Name>
+<a:Code>note</a:Code>
+<a:CreationDate>1674158519</a:CreationDate>
+<a:Creator>PC</a:Creator>
+<a:ModificationDate>1674158591</a:ModificationDate>
+<a:Modifier>PC</a:Modifier>
+<a:DataType>int</a:DataType>
+<a:Attribute.Visibility>-</a:Attribute.Visibility>
+</o:Attribute>
+<o:Attribute Id="o38">
+<a:ObjectID>597884C6-046B-41CD-B157-01ABAA8EB881</a:ObjectID>
+<a:Name>idU</a:Name>
+<a:Code>idU</a:Code>
+<a:CreationDate>1674158519</a:CreationDate>
+<a:Creator>PC</a:Creator>
+<a:ModificationDate>1674158591</a:ModificationDate>
+<a:Modifier>PC</a:Modifier>
+<a:DataType>int</a:DataType>
+<a:Attribute.Visibility>-</a:Attribute.Visibility>
+</o:Attribute>
+<o:Attribute Id="o39">
+<a:ObjectID>0D3EFC2D-F8BA-4251-BD09-77DF4A43F051</a:ObjectID>
+<a:Name>fileH</a:Name>
+<a:Code>fileH</a:Code>
+<a:CreationDate>1674158519</a:CreationDate>
+<a:Creator>PC</a:Creator>
+<a:ModificationDate>1674158591</a:ModificationDate>
+<a:Modifier>PC</a:Modifier>
+<a:DataType>String</a:DataType>
+<a:Attribute.Visibility>-</a:Attribute.Visibility>
+</o:Attribute>
+<o:Attribute Id="o40">
+<a:ObjectID>50409FAE-C585-4DA4-BD13-D35771E987B9</a:ObjectID>
+<a:Name>prix</a:Name>
+<a:Code>prix</a:Code>
+<a:CreationDate>1674158519</a:CreationDate>
+<a:Creator>PC</a:Creator>
+<a:ModificationDate>1674158591</a:ModificationDate>
+<a:Modifier>PC</a:Modifier>
+<a:DataType>int</a:DataType>
+<a:Attribute.Visibility>-</a:Attribute.Visibility>
+</o:Attribute>
+</c:Attributes>
 </o:Class>
-<o:Class Id="o31">
+<o:Class Id="o26">
 <a:ObjectID>A765D56A-6F92-41C2-B6ED-C68C11B47F66</a:ObjectID>
 <a:Name>Reservation</a:Name>
 <a:Code>Reservation</a:Code>
 <a:CreationDate>1670588499</a:CreationDate>
 <a:Creator>PC</a:Creator>
-<a:ModificationDate>1670588593</a:ModificationDate>
+<a:ModificationDate>1674158516</a:ModificationDate>
 <a:Modifier>PC</a:Modifier>
 <a:UseParentNamespace>0</a:UseParentNamespace>
-</o:Class>
-<o:Class Id="o32">
-<a:ObjectID>116FC21C-26D9-4DAA-9592-394242C448B5</a:ObjectID>
-<a:Name>Chambre</a:Name>
-<a:Code>Chambre</a:Code>
-<a:CreationDate>1670588500</a:CreationDate>
+<c:Attributes>
+<o:Attribute Id="o41">
+<a:ObjectID>E6064D51-B6C4-4A98-8B1C-071718A8C15B</a:ObjectID>
+<a:Name>idR</a:Name>
+<a:Code>idR</a:Code>
+<a:CreationDate>1674158484</a:CreationDate>
 <a:Creator>PC</a:Creator>
-<a:ModificationDate>1670588607</a:ModificationDate>
+<a:ModificationDate>1674158516</a:ModificationDate>
 <a:Modifier>PC</a:Modifier>
-<a:UseParentNamespace>0</a:UseParentNamespace>
+<a:DataType>int</a:DataType>
+<a:Attribute.Visibility>-</a:Attribute.Visibility>
+</o:Attribute>
+<o:Attribute Id="o42">
+<a:ObjectID>9FAFD9AB-A45C-468A-B547-20952B2192B2</a:ObjectID>
+<a:Name>idU</a:Name>
+<a:Code>idU</a:Code>
+<a:CreationDate>1674158484</a:CreationDate>
+<a:Creator>PC</a:Creator>
+<a:ModificationDate>1674158516</a:ModificationDate>
+<a:Modifier>PC</a:Modifier>
+<a:DataType>int</a:DataType>
+<a:Attribute.Visibility>-</a:Attribute.Visibility>
+</o:Attribute>
+<o:Attribute Id="o43">
+<a:ObjectID>BE0A4DBA-26C9-457F-AC71-9C67F33D8A8C</a:ObjectID>
+<a:Name>idH</a:Name>
+<a:Code>idH</a:Code>
+<a:CreationDate>1674158484</a:CreationDate>
+<a:Creator>PC</a:Creator>
+<a:ModificationDate>1674158516</a:ModificationDate>
+<a:Modifier>PC</a:Modifier>
+<a:DataType>int</a:DataType>
+<a:Attribute.Visibility>-</a:Attribute.Visibility>
+</o:Attribute>
+<o:Attribute Id="o44">
+<a:ObjectID>7202595F-2448-4B8A-948B-ADFC39AF194D</a:ObjectID>
+<a:Name>startR</a:Name>
+<a:Code>startR</a:Code>
+<a:CreationDate>1674158484</a:CreationDate>
+<a:Creator>PC</a:Creator>
+<a:ModificationDate>1674158516</a:ModificationDate>
+<a:Modifier>PC</a:Modifier>
+<a:DataType>Date</a:DataType>
+<a:Attribute.Visibility>-</a:Attribute.Visibility>
+</o:Attribute>
+<o:Attribute Id="o45">
+<a:ObjectID>0211E49E-ED79-44B7-824B-353A18394066</a:ObjectID>
+<a:Name>endR</a:Name>
+<a:Code>endR</a:Code>
+<a:CreationDate>1674158484</a:CreationDate>
+<a:Creator>PC</a:Creator>
+<a:ModificationDate>1674158516</a:ModificationDate>
+<a:Modifier>PC</a:Modifier>
+<a:DataType>Date</a:DataType>
+<a:Attribute.Visibility>-</a:Attribute.Visibility>
+</o:Attribute>
+</c:Attributes>
 </o:Class>
-<o:Class Id="o33">
+<o:Class Id="o27">
 <a:ObjectID>36096ED4-4B17-4FEB-AB1B-F8AC77FA5F26</a:ObjectID>
-<a:Name>Person</a:Name>
-<a:Code>Person</a:Code>
+<a:Name>User</a:Name>
+<a:Code>User</a:Code>
 <a:CreationDate>1670588505</a:CreationDate>
 <a:Creator>PC</a:Creator>
-<a:ModificationDate>1670589298</a:ModificationDate>
+<a:ModificationDate>1674158405</a:ModificationDate>
 <a:Modifier>PC</a:Modifier>
 <a:UseParentNamespace>0</a:UseParentNamespace>
-</o:Class>
-<o:Class Id="o34">
-<a:ObjectID>8832C8CD-D2B6-4112-BAE3-04F2CC3CA533</a:ObjectID>
-<a:Name>Admin Site</a:Name>
-<a:Code>AdminSite</a:Code>
-<a:CreationDate>1670588508</a:CreationDate>
+<c:Attributes>
+<o:Attribute Id="o46">
+<a:ObjectID>5685DA10-0FB9-4CD7-9EC8-A4B0101D34B8</a:ObjectID>
+<a:Name>idU</a:Name>
+<a:Code>idU</a:Code>
+<a:CreationDate>1674158339</a:CreationDate>
 <a:Creator>PC</a:Creator>
-<a:ModificationDate>1670588627</a:ModificationDate>
+<a:ModificationDate>1674158405</a:ModificationDate>
 <a:Modifier>PC</a:Modifier>
-<a:UseParentNamespace>0</a:UseParentNamespace>
-</o:Class>
-<o:Class Id="o35">
-<a:ObjectID>4CF30439-BA01-4211-8EC2-1D5AC40D2F62</a:ObjectID>
-<a:Name>Client</a:Name>
-<a:Code>Client</a:Code>
-<a:CreationDate>1670588510</a:CreationDate>
+<a:DataType>int</a:DataType>
+<a:Attribute.Visibility>-</a:Attribute.Visibility>
+</o:Attribute>
+<o:Attribute Id="o47">
+<a:ObjectID>E9D74551-8E10-498E-AD68-1F6CB6FE4F0E</a:ObjectID>
+<a:Name>Name</a:Name>
+<a:Code>name</a:Code>
+<a:CreationDate>1674158339</a:CreationDate>
 <a:Creator>PC</a:Creator>
-<a:ModificationDate>1670588633</a:ModificationDate>
+<a:ModificationDate>1674158405</a:ModificationDate>
 <a:Modifier>PC</a:Modifier>
-<a:UseParentNamespace>0</a:UseParentNamespace>
-</o:Class>
-<o:Class Id="o36">
-<a:ObjectID>B789100C-C53D-4127-9DB7-2D7F03CC44EB</a:ObjectID>
-<a:Name>Admin</a:Name>
-<a:Code>Admin</a:Code>
-<a:CreationDate>1670588511</a:CreationDate>
+<a:DataType>String</a:DataType>
+<a:Attribute.Visibility>-</a:Attribute.Visibility>
+</o:Attribute>
+<o:Attribute Id="o48">
+<a:ObjectID>DB3BBA2D-703A-4EA2-909A-245660A88F9A</a:ObjectID>
+<a:Name>LastName</a:Name>
+<a:Code>lastName</a:Code>
+<a:CreationDate>1674158339</a:CreationDate>
 <a:Creator>PC</a:Creator>
-<a:ModificationDate>1670588637</a:ModificationDate>
+<a:ModificationDate>1674158405</a:ModificationDate>
 <a:Modifier>PC</a:Modifier>
-<a:UseParentNamespace>0</a:UseParentNamespace>
+<a:DataType>String</a:DataType>
+<a:Attribute.Visibility>-</a:Attribute.Visibility>
+</o:Attribute>
+<o:Attribute Id="o49">
+<a:ObjectID>585422F1-F49E-4CF3-A276-CE372C4134B9</a:ObjectID>
+<a:Name>Email</a:Name>
+<a:Code>email</a:Code>
+<a:CreationDate>1674158339</a:CreationDate>
+<a:Creator>PC</a:Creator>
+<a:ModificationDate>1674158405</a:ModificationDate>
+<a:Modifier>PC</a:Modifier>
+<a:DataType>String</a:DataType>
+<a:Attribute.Visibility>-</a:Attribute.Visibility>
+</o:Attribute>
+<o:Attribute Id="o50">
+<a:ObjectID>49E25848-728D-4941-AE6C-CBA1CF4ED2FB</a:ObjectID>
+<a:Name>Password</a:Name>
+<a:Code>password</a:Code>
+<a:CreationDate>1674158339</a:CreationDate>
+<a:Creator>PC</a:Creator>
+<a:ModificationDate>1674158405</a:ModificationDate>
+<a:Modifier>PC</a:Modifier>
+<a:DataType>String</a:DataType>
+<a:Attribute.Visibility>-</a:Attribute.Visibility>
+</o:Attribute>
+<o:Attribute Id="o51">
+<a:ObjectID>DDAA1F6E-3890-4749-A22F-F690DEA0434D</a:ObjectID>
+<a:Name>Role</a:Name>
+<a:Code>role</a:Code>
+<a:CreationDate>1674158339</a:CreationDate>
+<a:Creator>PC</a:Creator>
+<a:ModificationDate>1674158405</a:ModificationDate>
+<a:Modifier>PC</a:Modifier>
+<a:DataType>int</a:DataType>
+<a:Attribute.Visibility>-</a:Attribute.Visibility>
+</o:Attribute>
+<o:Attribute Id="o52">
+<a:ObjectID>AA54229E-4E7C-498E-980E-37C2DBDB1340</a:ObjectID>
+<a:Name>fileU</a:Name>
+<a:Code>fileU</a:Code>
+<a:CreationDate>1674158339</a:CreationDate>
+<a:Creator>PC</a:Creator>
+<a:ModificationDate>1674158405</a:ModificationDate>
+<a:Modifier>PC</a:Modifier>
+<a:DataType>String</a:DataType>
+<a:Attribute.Visibility>-</a:Attribute.Visibility>
+</o:Attribute>
+</c:Attributes>
 </o:Class>
-<o:Class Id="o38">
+<o:Class Id="o28">
 <a:ObjectID>D1984894-4BDA-4121-B5DD-0C855FC90209</a:ObjectID>
 <a:Name>Commentaire</a:Name>
 <a:Code>Commentaire</a:Code>
 <a:CreationDate>1670588519</a:CreationDate>
 <a:Creator>PC</a:Creator>
-<a:ModificationDate>1670588587</a:ModificationDate>
+<a:ModificationDate>1674158447</a:ModificationDate>
 <a:Modifier>PC</a:Modifier>
 <a:UseParentNamespace>0</a:UseParentNamespace>
-</o:Class>
-<o:Class Id="o40">
-<a:ObjectID>B19CBB3A-0550-4E0A-8E2B-843AB6AA2126</a:ObjectID>
-<a:Name>Ville</a:Name>
-<a:Code>Ville</a:Code>
-<a:CreationDate>1670588614</a:CreationDate>
+<c:Attributes>
+<o:Attribute Id="o53">
+<a:ObjectID>B6D31B13-587A-4C90-B1ED-D2A6A8DA5297</a:ObjectID>
+<a:Name>idC</a:Name>
+<a:Code>idC</a:Code>
+<a:CreationDate>1674158416</a:CreationDate>
 <a:Creator>PC</a:Creator>
-<a:ModificationDate>1670588619</a:ModificationDate>
+<a:ModificationDate>1674158447</a:ModificationDate>
 <a:Modifier>PC</a:Modifier>
-<a:UseParentNamespace>0</a:UseParentNamespace>
-</o:Class>
-<o:Class Id="o42">
-<a:ObjectID>A7DDBF98-5604-4F2F-B2A4-4B4EF03164E8</a:ObjectID>
-<a:Name>Chambres reserver</a:Name>
-<a:Code>ChambresReserver</a:Code>
-<a:CreationDate>1670588668</a:CreationDate>
+<a:DataType>int</a:DataType>
+<a:Attribute.Visibility>-</a:Attribute.Visibility>
+</o:Attribute>
+<o:Attribute Id="o54">
+<a:ObjectID>9D1CD71C-75A4-49B5-9DD5-3A8E585D360C</a:ObjectID>
+<a:Name>message</a:Name>
+<a:Code>message</a:Code>
+<a:CreationDate>1674158416</a:CreationDate>
 <a:Creator>PC</a:Creator>
-<a:ModificationDate>1670588677</a:ModificationDate>
+<a:ModificationDate>1674158460</a:ModificationDate>
+<a:Modifier>PC</a:Modifier>
+<a:DataType>String</a:DataType>
+<a:Attribute.Visibility>-</a:Attribute.Visibility>
+</o:Attribute>
+<o:Attribute Id="o55">
+<a:ObjectID>BA6C6E72-E49A-40E8-8B59-50CE180EB690</a:ObjectID>
+<a:Name>idU</a:Name>
+<a:Code>idU</a:Code>
+<a:CreationDate>1674158416</a:CreationDate>
+<a:Creator>PC</a:Creator>
+<a:ModificationDate>1674158447</a:ModificationDate>
+<a:Modifier>PC</a:Modifier>
+<a:DataType>int</a:DataType>
+<a:Attribute.Visibility>-</a:Attribute.Visibility>
+</o:Attribute>
+<o:Attribute Id="o56">
+<a:ObjectID>9F793752-FC3F-44C0-8487-7EFCC318B156</a:ObjectID>
+<a:Name>idH</a:Name>
+<a:Code>idH</a:Code>
+<a:CreationDate>1674158416</a:CreationDate>
+<a:Creator>PC</a:Creator>
+<a:ModificationDate>1674158447</a:ModificationDate>
+<a:Modifier>PC</a:Modifier>
+<a:DataType>int</a:DataType>
+<a:Attribute.Visibility>-</a:Attribute.Visibility>
+</o:Attribute>
+<o:Attribute Id="o57">
+<a:ObjectID>3B0EC052-A0EC-43E4-89D2-34990E75AD87</a:ObjectID>
+<a:Name>prediction</a:Name>
+<a:Code>prediction</a:Code>
+<a:CreationDate>1674158416</a:CreationDate>
+<a:Creator>PC</a:Creator>
+<a:ModificationDate>1674158447</a:ModificationDate>
+<a:Modifier>PC</a:Modifier>
+<a:DataType>int</a:DataType>
+<a:Attribute.Visibility>-</a:Attribute.Visibility>
+</o:Attribute>
+</c:Attributes>
+</o:Class>
+<o:Class Id="o30">
+<a:ObjectID>92B97C93-D934-40D6-9DC7-999FBB3C911B</a:ObjectID>
+<a:Name>Blacklist</a:Name>
+<a:Code>Blacklist</a:Code>
+<a:CreationDate>1674157883</a:CreationDate>
+<a:Creator>PC</a:Creator>
+<a:ModificationDate>1674158336</a:ModificationDate>
 <a:Modifier>PC</a:Modifier>
 <a:UseParentNamespace>0</a:UseParentNamespace>
+<c:Attributes>
+<o:Attribute Id="o58">
+<a:ObjectID>D6121190-B9B9-4262-BA7F-B1D915E9FD22</a:ObjectID>
+<a:Name>IdB</a:Name>
+<a:Code>idB</a:Code>
+<a:CreationDate>1674158317</a:CreationDate>
+<a:Creator>PC</a:Creator>
+<a:ModificationDate>1674158336</a:ModificationDate>
+<a:Modifier>PC</a:Modifier>
+<a:DataType>int</a:DataType>
+<a:Attribute.Visibility>-</a:Attribute.Visibility>
+</o:Attribute>
+<o:Attribute Id="o59">
+<a:ObjectID>DCEA8D82-43D3-4C5E-B5C5-869EB87DD067</a:ObjectID>
+<a:Name>email</a:Name>
+<a:Code>email</a:Code>
+<a:CreationDate>1674158317</a:CreationDate>
+<a:Creator>PC</a:Creator>
+<a:ModificationDate>1674158336</a:ModificationDate>
+<a:Modifier>PC</a:Modifier>
+<a:DataType>String</a:DataType>
+<a:Attribute.Visibility>-</a:Attribute.Visibility>
+</o:Attribute>
+</c:Attributes>
+</o:Class>
+<o:Class Id="o31">
+<a:ObjectID>AF2081B3-CBE9-40ED-893C-FEA71FC578A3</a:ObjectID>
+<a:Name>Favorite</a:Name>
+<a:Code>Favorite</a:Code>
+<a:CreationDate>1674157917</a:CreationDate>
+<a:Creator>PC</a:Creator>
+<a:ModificationDate>1674158482</a:ModificationDate>
+<a:Modifier>PC</a:Modifier>
+<a:UseParentNamespace>0</a:UseParentNamespace>
+<c:Attributes>
+<o:Attribute Id="o60">
+<a:ObjectID>42EFEEC5-00AF-423C-A129-CC848D1C41F4</a:ObjectID>
+<a:Name>idF</a:Name>
+<a:Code>idF</a:Code>
+<a:CreationDate>1674158462</a:CreationDate>
+<a:Creator>PC</a:Creator>
+<a:ModificationDate>1674158482</a:ModificationDate>
+<a:Modifier>PC</a:Modifier>
+<a:DataType>int</a:DataType>
+<a:Attribute.Visibility>-</a:Attribute.Visibility>
+</o:Attribute>
+<o:Attribute Id="o61">
+<a:ObjectID>3EB35D7A-C95D-4B98-B6EF-3E5D7749F7EB</a:ObjectID>
+<a:Name>idU</a:Name>
+<a:Code>idU</a:Code>
+<a:CreationDate>1674158462</a:CreationDate>
+<a:Creator>PC</a:Creator>
+<a:ModificationDate>1674158482</a:ModificationDate>
+<a:Modifier>PC</a:Modifier>
+<a:DataType>int</a:DataType>
+<a:Attribute.Visibility>-</a:Attribute.Visibility>
+</o:Attribute>
+<o:Attribute Id="o62">
+<a:ObjectID>0521F3B3-EE56-4422-A872-9D8DAAC4A9B9</a:ObjectID>
+<a:Name>idH</a:Name>
+<a:Code>idH</a:Code>
+<a:CreationDate>1674158462</a:CreationDate>
+<a:Creator>PC</a:Creator>
+<a:ModificationDate>1674158482</a:ModificationDate>
+<a:Modifier>PC</a:Modifier>
+<a:DataType>int</a:DataType>
+<a:Attribute.Visibility>-</a:Attribute.Visibility>
+</o:Attribute>
+</c:Attributes>
 </o:Class>
 </c:Classes>
 <c:Associations>
-<o:Association Id="o13">
-<a:ObjectID>D3591EFB-EFE6-4CBE-96D8-EB30446DF092</a:ObjectID>
+<o:Association Id="o15">
+<a:ObjectID>0D2396BA-CEFB-46AE-8126-EF6EFBCA4267</a:ObjectID>
 <a:Name>Association_1</a:Name>
 <a:Code>association1</a:Code>
-<a:CreationDate>1670588765</a:CreationDate>
+<a:CreationDate>1674157956</a:CreationDate>
 <a:Creator>PC</a:Creator>
-<a:ModificationDate>1670588765</a:ModificationDate>
+<a:ModificationDate>1674157956</a:ModificationDate>
 <a:Modifier>PC</a:Modifier>
-<a:RoleAIndicator>C</a:RoleAIndicator>
 <a:RoleAMultiplicity>0..1</a:RoleAMultiplicity>
 <a:RoleBMultiplicity>0..*</a:RoleBMultiplicity>
 <a:ExtendedAttributesText>{0DEDDB90-46E2-45A0-886E-411709DA0DC9},Java,224={72FA5C48-5524-4DF7-8187-ABB19AB5AF9E},roleAContainer,6=&lt;None&gt;
@@ -1939,62 +2130,81 @@ LABL 0 Arial,8,N</a:FontList>
 
 </a:ExtendedAttributesText>
 <c:Object1>
-<o:Class Ref="o32"/>
+<o:Class Ref="o26"/>
 </c:Object1>
 <c:Object2>
-<o:Class Ref="o29"/>
+<o:Class Ref="o25"/>
+</c:Object2>
+</o:Association>
+<o:Association Id="o18">
+<a:ObjectID>711745C8-904A-4598-95A2-D4C7D40D79FE</a:ObjectID>
+<a:Name>Association_2</a:Name>
+<a:Code>association2</a:Code>
+<a:CreationDate>1674157983</a:CreationDate>
+<a:Creator>PC</a:Creator>
+<a:ModificationDate>1674157983</a:ModificationDate>
+<a:Modifier>PC</a:Modifier>
+<a:RoleAMultiplicity>0..1</a:RoleAMultiplicity>
+<a:RoleBMultiplicity>0..*</a:RoleBMultiplicity>
+<a:ExtendedAttributesText>{0DEDDB90-46E2-45A0-886E-411709DA0DC9},Java,224={72FA5C48-5524-4DF7-8187-ABB19AB5AF9E},roleAContainer,6=&lt;None&gt;
+{F6FFC71C-C472-4261-A710-B0BCC0BF4D58},roleAImplementationClass,6=&lt;None&gt;
+{C11C9F66-6453-43A2-8824-6654518CF65A},roleBImplementationClass,17=java.util.HashSet
+
+</a:ExtendedAttributesText>
+<c:Object1>
+<o:Class Ref="o28"/>
+</c:Object1>
+<c:Object2>
+<o:Class Ref="o25"/>
+</c:Object2>
+</o:Association>
+<o:Association Id="o21">
+<a:ObjectID>566B8DBB-72E4-4BBA-BF02-864C562CE71B</a:ObjectID>
+<a:Name>Association_3</a:Name>
+<a:Code>association3</a:Code>
+<a:CreationDate>1674157996</a:CreationDate>
+<a:Creator>PC</a:Creator>
+<a:ModificationDate>1674157996</a:ModificationDate>
+<a:Modifier>PC</a:Modifier>
+<a:RoleAMultiplicity>0..1</a:RoleAMultiplicity>
+<a:RoleBMultiplicity>0..*</a:RoleBMultiplicity>
+<a:ExtendedAttributesText>{0DEDDB90-46E2-45A0-886E-411709DA0DC9},Java,224={72FA5C48-5524-4DF7-8187-ABB19AB5AF9E},roleAContainer,6=&lt;None&gt;
+{F6FFC71C-C472-4261-A710-B0BCC0BF4D58},roleAImplementationClass,6=&lt;None&gt;
+{C11C9F66-6453-43A2-8824-6654518CF65A},roleBImplementationClass,17=java.util.HashSet
+
+</a:ExtendedAttributesText>
+<c:Object1>
+<o:Class Ref="o31"/>
+</c:Object1>
+<c:Object2>
+<o:Class Ref="o25"/>
+</c:Object2>
+</o:Association>
+<o:Association Id="o24">
+<a:ObjectID>D7CD0987-3CCC-4337-8687-931D3FF5E26A</a:ObjectID>
+<a:Name>Association_4</a:Name>
+<a:Code>association4</a:Code>
+<a:CreationDate>1674158014</a:CreationDate>
+<a:Creator>PC</a:Creator>
+<a:ModificationDate>1674158056</a:ModificationDate>
+<a:Modifier>PC</a:Modifier>
+<a:RoleAMultiplicity>0..*</a:RoleAMultiplicity>
+<a:RoleBMultiplicity>0..*</a:RoleBMultiplicity>
+<a:ExtendedAttributesText>{0DEDDB90-46E2-45A0-886E-411709DA0DC9},Java,224={72FA5C48-5524-4DF7-8187-ABB19AB5AF9E},roleAContainer,6=&lt;None&gt;
+{F6FFC71C-C472-4261-A710-B0BCC0BF4D58},roleAImplementationClass,6=&lt;None&gt;
+{C11C9F66-6453-43A2-8824-6654518CF65A},roleBImplementationClass,17=java.util.HashSet
+
+</a:ExtendedAttributesText>
+<c:Object1>
+<o:Class Ref="o27"/>
+</c:Object1>
+<c:Object2>
+<o:Class Ref="o25"/>
 </c:Object2>
 </o:Association>
 </c:Associations>
-<c:Generalizations>
-<o:Generalization Id="o22">
-<a:ObjectID>CAA76D64-2005-450A-B676-AC7CF3E08B68</a:ObjectID>
-<a:Name>Generalisation_1</a:Name>
-<a:Code>Generalisation_1</a:Code>
-<a:CreationDate>1670588544</a:CreationDate>
-<a:Creator>PC</a:Creator>
-<a:ModificationDate>1670588544</a:ModificationDate>
-<a:Modifier>PC</a:Modifier>
-<c:Object1>
-<o:Class Ref="o33"/>
-</c:Object1>
-<c:Object2>
-<o:Class Ref="o34"/>
-</c:Object2>
-</o:Generalization>
-<o:Generalization Id="o25">
-<a:ObjectID>0EDCEC8D-8C2B-463F-A843-92CEF4C9C35F</a:ObjectID>
-<a:Name>Generalisation_2</a:Name>
-<a:Code>Generalisation_2</a:Code>
-<a:CreationDate>1670588547</a:CreationDate>
-<a:Creator>PC</a:Creator>
-<a:ModificationDate>1670588547</a:ModificationDate>
-<a:Modifier>PC</a:Modifier>
-<c:Object1>
-<o:Class Ref="o33"/>
-</c:Object1>
-<c:Object2>
-<o:Class Ref="o35"/>
-</c:Object2>
-</o:Generalization>
-<o:Generalization Id="o28">
-<a:ObjectID>3E3418E3-862F-4809-B9B8-FF9DB20FF452</a:ObjectID>
-<a:Name>Generalisation_3</a:Name>
-<a:Code>Generalisation_3</a:Code>
-<a:CreationDate>1670588550</a:CreationDate>
-<a:Creator>PC</a:Creator>
-<a:ModificationDate>1670588550</a:ModificationDate>
-<a:Modifier>PC</a:Modifier>
-<c:Object1>
-<o:Class Ref="o33"/>
-</c:Object1>
-<c:Object2>
-<o:Class Ref="o36"/>
-</c:Object2>
-</o:Generalization>
-</c:Generalizations>
 <c:TargetModels>
-<o:TargetModel Id="o43">
+<o:TargetModel Id="o63">
 <a:ObjectID>609A7800-A7E6-488B-8DC6-6FAF022786E8</a:ObjectID>
 <a:Name>Java</a:Name>
 <a:Code>Java</a:Code>
@@ -2009,7 +2219,7 @@ LABL 0 Arial,8,N</a:FontList>
 <o:Shortcut Ref="o3"/>
 </c:SessionShortcuts>
 </o:TargetModel>
-<o:TargetModel Id="o44">
+<o:TargetModel Id="o64">
 <a:ObjectID>3E5EDE14-EDD3-4A88-A656-66203E3C5379</a:ObjectID>
 <a:Name>WSDL for Java</a:Name>
 <a:Code>WSDLJava</a:Code>

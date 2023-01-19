@@ -20,6 +20,7 @@
           <Property Name="message" Type="varchar" MaxLength="500" Nullable="false" />
           <Property Name="idU" Type="int" Nullable="false" />
           <Property Name="idH" Type="int" Nullable="false" />
+          <Property Name="prediction" Type="int" />
         </EntityType>
         <EntityType Name="Favorites">
           <Key>
@@ -40,6 +41,8 @@
           <Property Name="nbCH" Type="int" />
           <Property Name="note" Type="decimal" Precision="18" Scale="0" />
           <Property Name="idU" Type="int" />
+          <Property Name="fileH" Type="varchar" MaxLength="255" />
+          <Property Name="prix" Type="float" />
         </EntityType>
         <EntityType Name="Reservation">
           <Key>
@@ -61,6 +64,7 @@
           <Property Name="Email" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="Password" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="Role" Type="int" Nullable="false" />
+          <Property Name="fileU" Type="varchar" MaxLength="255" />
         </EntityType>
         <Association Name="fk_idH">
           <End Role="Hotels" Type="Self.Hotels" Multiplicity="1" />
@@ -239,6 +243,7 @@
           <Property Name="idH" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Hotel" Relationship="GestHotModel.fk_idH_rev" FromRole="Comment" ToRole="Hotel" />
           <NavigationProperty Name="User" Relationship="GestHotModel.fk_idU_rev" FromRole="Comment" ToRole="User" />
+          <Property Name="prediction" Type="Int32" />
         </EntityType>
         <EntityType Name="Favorite">
           <Key>
@@ -261,10 +266,12 @@
           <Property Name="nbCH" Type="Int32" />
           <Property Name="note" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="idU" Type="Int32" />
+          <Property Name="fileH" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Comments" Relationship="GestHotModel.fk_idH_rev" FromRole="Hotel" ToRole="Comment" />
           <NavigationProperty Name="Favorites" Relationship="GestHotModel.fk_idH_F" FromRole="Hotel" ToRole="Favorite" />
           <NavigationProperty Name="Reservations" Relationship="GestHotModel.fk_idH" FromRole="Hotel" ToRole="Reservation" />
           <NavigationProperty Name="User" Relationship="GestHotModel.FK_idU_H" FromRole="Hotel" ToRole="User" />
+          <Property Name="prix" Type="Double" />
         </EntityType>
         <EntityType Name="Reservation">
           <Key>
@@ -288,6 +295,7 @@
           <Property Name="Email" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="Password" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="Role" Type="Int32" Nullable="false" />
+          <Property Name="fileU" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Comments" Relationship="GestHotModel.fk_idU_rev" FromRole="User" ToRole="Comment" />
           <NavigationProperty Name="Favorites" Relationship="GestHotModel.fk_idU_F" FromRole="User" ToRole="Favorite" />
           <NavigationProperty Name="Hotels" Relationship="GestHotModel.FK_idU_H" FromRole="User" ToRole="Hotel" />
@@ -394,6 +402,7 @@
           <EntitySetMapping Name="Comments">
             <EntityTypeMapping TypeName="GestHotModel.Comment">
               <MappingFragment StoreEntitySet="Comments">
+                <ScalarProperty Name="prediction" ColumnName="prediction" />
                 <ScalarProperty Name="idH" ColumnName="idH" />
                 <ScalarProperty Name="idU" ColumnName="idU" />
                 <ScalarProperty Name="message" ColumnName="message" />
@@ -413,6 +422,8 @@
           <EntitySetMapping Name="Hotels">
             <EntityTypeMapping TypeName="GestHotModel.Hotel">
               <MappingFragment StoreEntitySet="Hotels">
+                <ScalarProperty Name="prix" ColumnName="prix" />
+                <ScalarProperty Name="fileH" ColumnName="fileH" />
                 <ScalarProperty Name="idU" ColumnName="idU" />
                 <ScalarProperty Name="note" ColumnName="note" />
                 <ScalarProperty Name="nbCH" ColumnName="nbCH" />
@@ -437,6 +448,7 @@
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="GestHotModel.User">
               <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="fileU" ColumnName="fileU" />
                 <ScalarProperty Name="Role" ColumnName="Role" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="Email" ColumnName="Email" />

@@ -15,14 +15,25 @@ namespace GestHot.Models
 
     public partial class Reservation
     {
+        public Reservation() { }
+        public Reservation(int idU,int idH, DateTime startR,DateTime endR)
+        {
+            this.idU = idU;
+            this.idH = idH;
+            this.startR = startR;
+            this.endR = endR;
+        }
         public int idR { get; set; }
         public int idU { get; set; }
         public int idH { get; set; }
-        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}")]
-        [Required(ErrorMessage = "Start date is required")]
+        [Required(ErrorMessage = "Date is required")]
+        [DataType(DataType.DateTime)]
+        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
         public Nullable<System.DateTime> startR { get; set; }
-        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}")]
-        [Required(ErrorMessage = "End date is required")]
+        
+        [Required(ErrorMessage = "Date is required")]
+        [DataType(DataType.DateTime)]
+        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
         public Nullable<System.DateTime> endR { get; set; }
     
         public virtual Hotel Hotel { get; set; }

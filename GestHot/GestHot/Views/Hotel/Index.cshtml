@@ -5,30 +5,53 @@
 }
 
 <div class="container">
+    @if (TempData["fav"] != null)
+    {
+        <div class="alert alert-warning alert-dismissible fade show my-3 text-center" role="alert">
+            <i class="bi bi-exclamation-diamond-fill"></i> @TempData["fav"]
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    }
+
     @foreach (var item in Model)
     {
         <div class="card my-5">
             <div class="card-body">
                 <div class="row">
-                    <div class="col-sm-4">
-                        <img src="~/images/search.jpg" class="img-thumbnail" />
+                    <div class="col-sm-5">
+                        @if (item.fileH == null)
+                        {
+                            <img src="~/images/search.jpg" class="" height="150" width="80%"/>
+                        }
+                        else
+                        {
+                        <img src="@item.fileH" class="" height="250" width="100%" />
+                        }
                     </div>
-                    <div class="col-sm-8">
-                        
-                            <h2 class="my-2">
-                                <a href="@Url.Action("Details/"+item.idH)" class="no-color">
-                                    @Html.DisplayFor(modelItem => item.name)
-                                </a>
-                                    
-                            </h2>
+                    <div class="col-sm-7">
+
+                        <h2 class="my-2">
+                            <a href="@Url.Action("Details/"+item.idH)" class="no-color">
+                                @Html.DisplayFor(modelItem => item.name)
+                            </a>
+
+                        </h2>
 
                         <h4>@Html.DisplayFor(modelItem => item.adresse)</h4>
+                        <p>
+                            @for (int i = 0; i < item.note; i++)
+                            {
+
+                                <i class="bi bi-star-fill gold"></i>
+                            }
+                        </p>
                         <p>@Html.DisplayFor(modelItem => item.description)</p>
-                        @Html.ActionLink("Reserve now", "Details", new { id = item.idH }, new { @class = "btn btn-red" })
-                    </div>
+                        <h3 class="text-uppercase text-red">@Html.DisplayFor(modelItem => item.prix) $</h3>
+
+                    </div>@Html.ActionLink("Reserve now", "Details", new { id = item.idH }, new { @class = "btn btn-red" })
                 </div>
             </div>
         </div>
-        
+
     }
 </div>

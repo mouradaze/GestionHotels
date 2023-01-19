@@ -9,30 +9,41 @@
         <h2 class="text-red">Comments</h2>
     </div>
     <div class="my-3 row">
-        <table class="table">
+        <table class="table table-striped">
             <tr>
-                <th>
+                <th class="text-center">
                     <h4>Comment</h4>
                 </th>
-                <th>
+                <th class="text-center">
                     <h4>User Name</h4>
                 </th>
-                <th>
-                    <h4>Comment rating</h4>
+                <th class="text-center">
+                    <h4>Comment prediction</h4>
                 </th>
             </tr>
 
             @foreach (var item in Model)
             {
                 <tr>
-                    <td>
+                    <td class="text-center">
                         @Html.DisplayFor(modelItem => item.message)
                     </td>
-                    <td>
+                    <td class="text-center">
                         @Html.DisplayFor(modelItem => item.User.Name)
                     </td>
-                    <td>
-                        <p>Good or bad</p>
+                    <td class="text-center">
+                        @if (item.prediction == 1)
+                        {
+                            <i class="bi bi-emoji-smile-fill"></i>
+                        }
+                        else if (item.prediction == -1)
+                        {
+                            <i class="bi bi-emoji-frown-fill"></i>
+                        }
+                        else
+                        {
+                            <i class="bi bi-emoji-neutral-fill"></i>
+                        }
                     </td>
                 </tr>
             }

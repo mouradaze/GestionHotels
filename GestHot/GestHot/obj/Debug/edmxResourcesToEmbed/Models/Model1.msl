@@ -12,6 +12,7 @@
     <EntitySetMapping Name="Comments">
       <EntityTypeMapping TypeName="GestHotModel.Comment">
         <MappingFragment StoreEntitySet="Comments">
+          <ScalarProperty Name="prediction" ColumnName="prediction" />
           <ScalarProperty Name="idH" ColumnName="idH" />
           <ScalarProperty Name="idU" ColumnName="idU" />
           <ScalarProperty Name="message" ColumnName="message" />
@@ -31,6 +32,8 @@
     <EntitySetMapping Name="Hotels">
       <EntityTypeMapping TypeName="GestHotModel.Hotel">
         <MappingFragment StoreEntitySet="Hotels">
+          <ScalarProperty Name="prix" ColumnName="prix" />
+          <ScalarProperty Name="fileH" ColumnName="fileH" />
           <ScalarProperty Name="idU" ColumnName="idU" />
           <ScalarProperty Name="note" ColumnName="note" />
           <ScalarProperty Name="nbCH" ColumnName="nbCH" />
@@ -55,6 +58,7 @@
     <EntitySetMapping Name="Users">
       <EntityTypeMapping TypeName="GestHotModel.User">
         <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="fileU" ColumnName="fileU" />
           <ScalarProperty Name="Role" ColumnName="Role" />
           <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="Email" ColumnName="Email" />

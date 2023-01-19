@@ -92,7 +92,21 @@ namespace GestHot.Controllers
         // POST
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult login(User user)
+        public ActionResult login(string email,string pass)
+        {
+            var pQuery = db.Users.FirstOrDefault(e => e.Email.Equals(email) && e.Password.Equals(pass) && e.Role == 1);
+            if (pQuery != null)
+            {
+                Session["admin"] = "good";
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            
+        }
+        /*public ActionResult login([Bind(Include = "Email,Password")] User user)
         {
             if (ModelState.IsValid)
             {
@@ -104,14 +118,14 @@ namespace GestHot.Controllers
                 }
                 else
                 {
-                    return RedirectToAction("login");
+                    return RedirectToAction("Index","Home");
                 }
             }
             else
             {
-                return RedirectToAction("login");
+                return RedirectToAction("Reservation");
             }
-        }
+        }*/
 
         public ActionResult logout()
         {

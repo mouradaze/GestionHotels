@@ -6,62 +6,82 @@
 
 
 <div class="container">
-    <div class="row">
-        <div class="col-9">
+    <div class="row my-4">
+        <div class="col-sm-6">
+            <img src="@Html.DisplayFor(model => model.fileH)" height="370" width="500" />
+        </div>
+        <div class="col-sm-6">
             <h2>@Html.DisplayFor(model => model.name)</h2>
-            <p>Stars</p>
+            <p>
+                @for (int i = 0; i < Model.note; i++)
+                {
+
+                    <i class="bi bi-star-fill gold"></i>
+                }
+            </p>
+            <p class="text-uppercase text-red">@TempData["cmtnb"] Reviews</p>
             <h5><i class="bi bi-geo-alt-fill"></i> @Html.DisplayFor(model => model.adresse)</h5>
+            <h3 class="text-uppercase text-red">@Html.DisplayFor(model => model.prix) $</h3>
+            
+            <p class="my-1">@Html.DisplayFor(model => model.description)</p>
         </div>
         <div class="col-3 d-flex align-items-end">
-            <a class="mx-2 my-2 no-color" href="#review"><i class="bi bi-pencil-fill"></i> Write a review</a>
-            <a class="mx-2 my-2 no-color" href="#"><i class="bi bi-heart-fill"></i> Love</a>
+            
+            @if (Session["userId"] != null)
+            {<a class="mx-2 my-2 no-color" href="#review"><i class="bi bi-pencil-fill"></i> Write a review</a>
+
+                <a class="mx-2 my-2 no-color" href="@Url.Action("Fav", new { idU = Session["userId"].ToString(), idH = Model.idH })"><i class="bi bi-heart-fill"></i> Love</a>
+            }
         </div>
     </div>
 </div>
 <div class="newback">
     <div class="container">
         <div class="row">
-            <div class="col-6 my-3">
-                <div class="card bg-white">
-                    <div class="card-header">
-                        <h3 class="text-red text-uppercase">Reserve now</h3>
-                    </div>
-                    <div class="card-body">
-                        <div class="row my-3">
-                            <div class="col-sm-6">
-                                <input type="date" id="fromDate" min="" class="form-control" />
-                            </div>
-                            <div class="col-sm-6">
-                                <input type="date" id="toDate" max="" class="form-control" />
-                            </div>
-                        </div>
-                        <div class="row my-3">
-                            <div class="col-sm-6">
-                                <label for="nbrP" class="form-label text-red">Nmber of people</label>
-                                <input type="number" id="nbrP" value="2" class="form-control" />
-                            </div>
-                        </div>
-                        <div class="row my-3">
-                            <div class="col-sm-6">
-                                <label for="nbrR" class="form-label text-red">Number of Rooms</label>
-                                <input type="number" id="nbrR" value="1" class="form-control" />
-                            </div>
-                        </div>
-                            <div class="text-center">
-                                <a class="btn btn-red ">Reserve now</a>
-                            </div>
 
-                        </div>
-                    </div>
+            @if (Session["userId"] != null)
+            {<div class="col-6 my-3">
+
+    <form id="myForm3" action="/Hotel/reservation" method="Post">
+        @Html.AntiForgeryToken()
+        <div class="card bg-white">
+            <div class="card-header">
+                <h3 class="text-red text-uppercase">Reserve now</h3>
             </div>
-            <div class="col-6">
+            <div class="card-body">
                 <div class="row my-3">
-                    <div class="col-sm-3">
-                        <img src="~/images/c.png" height="250" width="530" />
+                    <div class="col-sm-6">
+                        <input type="date" name="dateS" id="fromDate" min="" class="form-control" />
+                    </div>
+                    <div class="col-sm-6">
+                        <input type="date" name="dateE" id="toDate" max="" class="form-control" />
                     </div>
                 </div>
+                <div class="row my-3">
+                    <div class="col-sm-6">
+                        <label for="nbrP" class="form-label text-red">Nmber of people</label>
+                        <input type="number" name="nbrP" id="nbrP" value="2" class="form-control" />
+                    </div>
+                </div>
+                <div class="row my-3">
+                    <div class="col-sm-6">
+                        <label for="nbrR" class="form-label text-red">Number of Rooms</label>
+                        <input type="number" name="nbrR" id="nbrR" value="1" class="form-control" />
+                    </div>
+                    <input type="hidden" name="idH" value="@Model.idH" />
+                    <input type="hidden" name="idU" value="@Session["userId"].ToString()" />
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-red">Reserve now</button>
+                </div>
+
             </div>
         </div>
+    </form>
+
+    
+</div>}
+            </div>
         
     </div>
 
@@ -69,51 +89,36 @@
 
 </div>
 
-<div class="container  my-5">
+<div class="container  my-3">
     <div class="row ">
         <h3 class="my-4 text-uppercase">You may also like</h3>
         <hr />
     </div>
     <div class="row">
-        <div class="col-sm-2 my-3">
-            <div class="card">
-                <a href="#" class="no-color">
-                    <img src="~/images/search.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Hotel name</h5>
-                        <p class="card-text">Stars</p>
-                        <p class="text-uppercase">Price</p>
-                    </div>
-                </a>
+        @foreach(var it in TempData["hots"] as IEnumerable<GestHot.Models.Hotel>)
+            {
+                <div class="col-sm-3 my-3">
+                    <div class="card bg-light">
+                        <a href="@Url.Action("Details", new {id = it.idH})" class="no-color">
+                            <img src="@Html.DisplayFor(modelit => it.fileH)" class="card-img-top" height="100" alt="...">
+                            <div class="card-body">
+                                <h4 class="card-title">@Html.DisplayFor(modelit => it.name)</h4>
+                                <h5 class="card-title">@Html.DisplayFor(modelit => it.adresse)</h5>
+                                <p class="card-text">
+                                    @for (int i = 0; i < it.note; i++)
+                                    {
 
-            </div>
-        </div>
-        <div class="col-sm-2 my-3">
-            <div class="card">
-                <a href="#" class="no-color">
-                    <img src="~/images/search.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Hotel name</h5>
-                        <p class="card-text">Stars</p>
-                        <p class="text-uppercase">Price</p>
-                    </div>
-                </a>
+                                        <i class="bi bi-star-fill gold"></i>
+                                    }
+                                </p>
+                            </div>
+                        </a>
 
-            </div>
-        </div>
-        <div class="col-sm-2 my-3">
-            <div class="card">
-                <a href="#" class="no-color">
-                    <img src="~/images/search.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Hotel name</h5>
-                        <p class="card-text">Stars</p>
-                        <p class="text-uppercase">Price</p>
                     </div>
-                </a>
-
-            </div>
-        </div>
+                </div>
+            }
+        
+        
     </div>
 </div>
 
@@ -125,7 +130,7 @@
                     <h3 class="text-uppercase text-red">About</h3>
                 </div>
                 <div class="card-body">
-                    <h3>Stars</h3>
+                    
                     <p>@Html.DisplayFor(model => model.description)</p>
                 </div>
             </div>
@@ -138,15 +143,20 @@
         <h2 class="text-uppercase">Reviews</h2>
         <hr />
     </div>
+    @if (Session["userId"] != null)
+    {
     <div class="row">
+    <form id="form4" action="/Hotel/addCmt" method="Post">
+        @Html.AntiForgeryToken()
         <div class="form-group">
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" placeholder="Your review"></textarea>
+            <textarea class="form-control" name="cmt" id="exampleFormControlTextarea1" rows="4" placeholder="Your review"></textarea>
         </div>
+        <input type="hidden" name="idH" value="@Model.idH"/>
         <div class="d-flex justify-content-end my-2">
-            <a class="btn btn-success ">Add</a>
+            <button type="submit" class="btn btn-success ">Add</button>
         </div>
-        
-    </div>
+    </form>
+    </div>}
     
     <div class="container my-4">
         @foreach(var cmt in TempData["comments"] as System.Data.Entity.Infrastructure.DbQuery<GestHot.Models.Comment>)
@@ -162,61 +172,6 @@
     </div>
 </div>
 
-
-<!--
-<h2>Details</h2>
-
-<div>
-    <h4>Hotel</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.adresse)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.adresse)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.description)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.description)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.nbCH)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.nbCH)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.note)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.note)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.idH }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
-    -->
 <script>
     var fromData;
     $('#fromDate').on('change', function () {

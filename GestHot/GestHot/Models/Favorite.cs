@@ -14,6 +14,12 @@ namespace GestHot.Models
     
     public partial class Favorite
     {
+        public Favorite() { }
+        public Favorite(int idU,int idH)
+        {
+            this.idU = idU;
+            this.idH = idH;
+        }
         public int idF { get; set; }
         public int idU { get; set; }
         public int idH { get; set; }
