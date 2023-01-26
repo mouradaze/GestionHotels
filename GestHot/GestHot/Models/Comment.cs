@@ -11,21 +11,20 @@ namespace GestHot.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Comment
     {
+
         public Comment() { }
-        public Comment(int idU,int idH, string message)
+        public Comment(int idU, int idH, string message)
         {
+            
             this.message = message;
             this.idU = idU;
             this.idH = idH;
         }
 
         public int idC { get; set; }
-        [Required(ErrorMessage ="Review message is required")]
-        [MinLength(5)]
         public string message { get; set; }
         public int idU { get; set; }
         public int idH { get; set; }

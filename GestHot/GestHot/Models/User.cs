@@ -11,8 +11,7 @@ namespace GestHot.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class User
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -37,15 +36,9 @@ namespace GestHot.Models
         }
 
         public int idU { get; set; }
-        [Required(ErrorMessage ="Name is required")]
         public string Name { get; set; }
         public string LastName { get; set; }
-        [Required(ErrorMessage = "E-mail is required")]
         public string Email { get; set; }
-        [Required(ErrorMessage = "Password is required")]
-        [StringLength(255, ErrorMessage = "Must be more than 8 characters", MinimumLength = 8)]
-
-        [DataType(DataType.Password)]
         public string Password { get; set; }
         public int Role { get; set; }
         public string fileU { get; set; }

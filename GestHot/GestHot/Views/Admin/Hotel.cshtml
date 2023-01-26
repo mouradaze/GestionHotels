@@ -34,7 +34,7 @@
                         <th>@Html.DisplayFor(modelItem => item.note)</th>
                         <th>
                             <a data-bs-toggle="tooltip" data-bs-placement="top" title="See Details" class="mx-2 no-color" href="@Url.Action("Details", "Hotel", new {id = item.idH})"><i class="bi bi-file-earmark-text-fill"></i></a>
-                            <a data-bs-toggle="tooltip" data-bs-placement="top" title="Delete" class="mx-2 no-color" href="@Url.Action("deleteH","Admin")"><i class="bi bi-trash3-fill"></i></a>
+                            <a data-bs-toggle="tooltip" data-bs-placement="top" title="Delete" class="mx-2 no-color" href="@Url.Action("deleteH","Admin", new {id = item.idH})"><i class="bi bi-trash3-fill"></i></a>
 
                         </th>
                     </tr>

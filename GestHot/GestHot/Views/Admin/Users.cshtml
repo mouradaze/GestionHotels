@@ -29,9 +29,8 @@
                         <th>@Html.DisplayFor(modelItem => item.LastName)</th>
                         <th>@Html.DisplayFor(modelItem => item.Email)</th>
                         <th><!--Comments in user-->
-                            <a data-bs-toggle="tooltip" data-bs-placement="top" title="See comments" class="mx-2 no-color" href="@Url.Action("Comments", "Owner",new {id = item.idU})"><i class="bi bi-chat-left-dots-fill"></i></a>
                             <a data-bs-toggle="tooltip" data-bs-placement="top" title="Edit" class="mx-2 no-color" href="@Url.Action("Edit","User",new {id = item.idU})"><i class="bi bi-pencil-fill"></i></a>
-                            <a data-bs-toggle="tooltip" data-bs-placement="top" title="See Details" class="mx-2 no-color" href="@Url.Action("Details","User",new {id = item.idU})"><i class="bi bi-file-earmark-text-fill"></i></a>
+                            <a data-bs-toggle="tooltip" data-bs-placement="top" title="See Details" class="mx-2 no-color" href="@Url.Action("information","User",new {id = item.idU})"><i class="bi bi-file-earmark-text-fill"></i></a>
                             <a data-bs-toggle="tooltip" data-bs-placement="top" title="Delete" class="mx-2 no-color" href="@Url.Action("deleteU","Admin", new {id = item.idU})"><i class="bi bi-trash3-fill"></i></a>
                             <a data-bs-toggle="tooltip" data-bs-placement="top" title="BlackList" class="no-color mx-2" href="@Url.Action("blacklistU","Admin", new {id = item.idU})">
                                 <i class="bi bi-exclamation-square-fill"></i>

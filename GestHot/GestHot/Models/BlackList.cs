@@ -15,11 +15,10 @@ namespace GestHot.Models
     public partial class BlackList
     {
         public BlackList() { }
-        public BlackList( string emailB)
+        public BlackList(string mail)
         {
-            this.emailB = emailB;
+            this.emailB=mail;
         }
-
         public int idB { get; set; }
         public string emailB { get; set; }
     }

@@ -123,6 +123,7 @@ namespace GestHot.Controllers
         {
             if (ModelState.IsValid)
             {
+                
                 hotel.idU = int.Parse((string)Session["userID"]);
                 db.Entry(hotel).State = EntityState.Modified;
                 db.SaveChanges();
@@ -145,12 +146,12 @@ namespace GestHot.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
 
-        public ActionResult newHotel([Bind(Include = "name,adresse,description,nbCH,idU,fileH,prix")] Hotel hotel, HttpPostedFileBase fileH)
+        public ActionResult newHotel([Bind(Include = "name,adresse,description,nbCH,note,idU,fileH,prix")] Hotel hotel, HttpPostedFileBase fileH)
         {
             if (ModelState.IsValid)
             {
                 hotel.idU = int.Parse((string)Session["userID"]);
-                hotel.note = 0;
+                //hotel.note = 0;
                 if (db.Hotels.FirstOrDefault(e => e.name.Equals(hotel.name) && e.adresse.Equals(hotel.adresse)) != null)
                 {
                     TempData["hotel"] = "This hotel already exists";

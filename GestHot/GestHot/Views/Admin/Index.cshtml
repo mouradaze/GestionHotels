@@ -29,10 +29,10 @@
                                         <th>@Html.DisplayFor(modelItem => item.LastName)</th>
                                         <th>@Html.DisplayFor(modelItem => item.Email)</th>
                                         <th>
-                                            <a data-bs-toggle="tooltip" data-bs-placement="top" title="BlackList" class="no-color">
+                                            <a href="@Url.Action("blacklistU", "Admin",new {id = item.idU})" data-bs-toggle="tooltip" data-bs-placement="top" title="BlackList" class="no-color">
                                                 <i class="bi bi-exclamation-square-fill"></i>
                                             </a>
-                                            <a href="@Url.Action("Details", "User",new {id = item.idU})" data-bs-toggle="tooltip" data-bs-placement="top" title="See Details" class="mx-2 no-color">
+                                            <a href="@Url.Action("information", "User",new {id = item.idU})" data-bs-toggle="tooltip" data-bs-placement="top" title="See Details" class="mx-2 no-color">
                                                 <i class="bi bi-info-square-fill"></i>
                                             </a>
                                         </th>

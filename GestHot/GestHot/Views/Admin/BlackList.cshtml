@@ -28,7 +28,7 @@
                         <th scope="row">@Html.DisplayFor(modelItem => item.idB)</th>
                         <th>@Html.DisplayFor(modelItem => item.emailB)</th>
                         <th>
-                           <a data-bs-toggle="tooltip" data-bs-placement="top" title="Delete from blacklist" class="mx-2 no-color" href="@Url.Action("Delete","Owner")"><i class="bi bi-trash3-fill"></i></a> 
+                           <a data-bs-toggle="tooltip" data-bs-placement="top" title="Delete from blacklist" class="mx-2 no-color" href="@Url.Action("deleteB", "Admin", new {id=item.idB})"><i class="bi bi-trash3-fill"></i></a> 
                         </th>
                     </tr>
                 }

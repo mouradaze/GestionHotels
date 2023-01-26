@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using GestHot.Models;
+using Microsoft.Ajax.Utilities;
 
 namespace GestHot.Controllers
 {
@@ -40,6 +41,7 @@ namespace GestHot.Controllers
         {
             if (Session["admin"] != null)
             {
+                new OwnerController().hotelNote();
                 return View(db.Hotels.ToList());
             }
             else
@@ -165,10 +167,41 @@ namespace GestHot.Controllers
             BlackList bl = new BlackList(usr.Email);
 
             db.BlackLists.Add(bl);
+            var pq = db.Reservations.Where(e => e.idU == usr.idU);
+            var pq2 = db.Favorites.Where(e => e.idU == usr.idU);
+            var pq3 = db.Comments.Where(e => e.idU == usr.idU);
+            if(pq!= null)
+            {
+                foreach(var r in pq)
+                {
+                    db.Reservations.Remove(r);
+                }
+            }
+            if (pq2 != null)
+            {
+                foreach (var r in pq2)
+                {
+                    db.Favorites.Remove(r);
+                }
+            }
+            if (pq3 != null)
+            {
+                foreach (var r in pq3)
+                {
+                    db.Comments.Remove(r);
+                }
+            }
             db.Users.Remove(usr);
             db.SaveChanges();
             return RedirectToAction("Index");
 
+        }
+        public ActionResult deleteB(int? id)
+        {
+            BlackList usr = db.BlackLists.Find(id);
+            db.BlackLists.Remove(usr);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
 
     }

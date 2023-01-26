@@ -24,7 +24,6 @@ namespace GestHot.Models
         public int idU { get; set; }
         public int idH { get; set; }
     
-        public virtual Hotel Hotel { get; set; }
         public virtual User User { get; set; }
     }
 }

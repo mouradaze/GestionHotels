@@ -11,39 +11,20 @@ namespace GestHot.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Hotel
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Hotel()
         {
             this.Comments = new HashSet<Comment>();
-            this.Favorites = new HashSet<Favorite>();
             this.Reservations = new HashSet<Reservation>();
         }
-        public Hotel( string name, string adresse, string description, int? nbCH, int? idU, double? prix)
-        {
-            this.idH = idH;
-            this.name = name;
-            this.adresse = adresse;
-            this.description = description;
-            this.nbCH = nbCH;
-            this.note = note;
-            this.idU = idU;
-            this.prix = prix;
-            this.Comments = new HashSet<Comment>();
-            this.Favorites = new HashSet<Favorite>();
-            this.Reservations = new HashSet<Reservation>();
-        }
-
+    
         public int idH { get; set; }
-        [Required(ErrorMessage ="Name is required")]
         public string name { get; set; }
-        [Required(ErrorMessage = "Adresse is required")]
         public string adresse { get; set; }
         public string description { get; set; }
-        [Required(ErrorMessage = "Number of rooms is required")]
         public Nullable<int> nbCH { get; set; }
         public Nullable<decimal> note { get; set; }
         public Nullable<int> idU { get; set; }
@@ -52,8 +33,6 @@ namespace GestHot.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Comment> Comments { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Favorite> Favorites { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Reservation> Reservations { get; set; }
         public virtual User User { get; set; }

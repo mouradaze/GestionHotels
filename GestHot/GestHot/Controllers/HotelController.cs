@@ -9,7 +9,7 @@ using System.Web;
 using System.Web.Mvc;
 using GestHot.Models;
 using Newtonsoft.Json.Linq;
-
+//[DataType(DataType.DateTime)] [DataType(DataType.Password)]
 namespace GestHot.Controllers
 {
     public class HotelController : Controller
